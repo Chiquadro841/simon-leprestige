@@ -8,14 +8,13 @@ from pathlib import Path
 # FONT Raleway e Colore
 # -----------------------------
 
-st.markdown('<p style="color:#DCC163">Questo testo è giallo oro!</p>', unsafe_allow_html=True)
-
 st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
 <style>
 html, body, div, p, span, h1, h2, h3, h4, h5, h6, [class*="css"] {
     font-family: 'Raleway', sans-serif !important;
-    font-weight: 100 !important;  /* testi sottili ma leggibili */
+    font-weight: 100 !important;  /* testi sottili ma leggibili 
+    color: #DCC163 !important;*/
 }
 p {
     font-size: 22px !important;   /* opzionale: applica specificamente ai paragrafi */
@@ -178,6 +177,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
