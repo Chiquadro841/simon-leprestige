@@ -60,9 +60,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-def get_base64(file_path):
-    with open(file_path, "rb") as f:
-        return base64.b64encode(f.read()).decode()
         
 # DUE IMMAGINI PRINCIPALI
 img_1 = "images/top.jpg"
@@ -171,4 +168,5 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
