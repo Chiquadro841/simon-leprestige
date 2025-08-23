@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 import base64
+from pathlib import Path
+
 
 # -----------------------------
 # FONT Raleway
@@ -158,7 +160,7 @@ media = [
     "scamarcio.jpg",
     "video.mp4"
 ]
-from pathlib import Path
+
 col_left, col_center, col_right = st.columns([1,3,1])
 
 with col_center:
@@ -190,6 +192,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
