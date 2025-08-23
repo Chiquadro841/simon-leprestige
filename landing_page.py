@@ -1,85 +1,174 @@
 import streamlit as st
+from PIL import Image
+import base64
 
-# Configurazione pagina
-st.set_page_config(page_title="Landing Page Demo", layout="wide")
+# -----------------------------
+# FONT Raleway
+# -----------------------------
 
-# Stile CSS per fondo nero e testo bianco
+
 st.markdown("""
-    <style>
-        body {
-            background-color: #000000;
-            color: #FFFFFF;
-        }
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #111111;
-            padding: 10px;
-            text-align: center;
-            color: #AAAAAA;
-        }
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+<style>
+html, body, div, p, span, h1, h2, h3, h4, h5, h6, [class*="css"] {
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 100 !important;  /* testi sottili ma leggibili */
+}
+p {
+    font-size: 22px !important;   /* opzionale: applica specificamente ai paragrafi */
+h1, h2, h3 {
+    font-weight: 300 !important;  /* titoli leggermente più spessi */
+}
+</style>
 """, unsafe_allow_html=True)
 
-# Logo centrato
-st.markdown('<div class="center"><img src="https://via.placeholder.com/200x80.png?text=LOGO" alt="Logo"></div>', unsafe_allow_html=True)
+# -----------------------------
+# FUNZIONE PER BASE64
+# -----------------------------
+def get_base64(file_path):
+    with open(file_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-# Titolo principale
-st.markdown("<h1 style='text-align:center; color:white;'>Benvenuto nella Nostra Landing Page</h1>", unsafe_allow_html=True)
+# -----------------------------
+# SFONDO PAGINA
+# -----------------------------
+img_path = "images/dark_1.jpg"
+img_base64 = get_base64(img_path)
 
-# Testo introduttivo
-st.markdown("""
-<p style="text-align:center; font-size:18px;">
-Questa è una landing page di prova.  
-Offriamo servizi innovativi e soluzioni su misura per i nostri clienti.  
-</p>
+st.markdown(f"""
+<style>
+.stApp {{
+    background-image: url("data:image/jpg;base64,{img_base64}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}}
+</style>
 """, unsafe_allow_html=True)
+
+# -----------------------------
+# CONFIGURAZIONE PAGINA
+# -----------------------------
+st.set_page_config(page_title="Landing Demo", layout="wide")
+
+# -----------------------------
+# LOGO CENTRATO
+# -----------------------------
+st.markdown("""
+<div style="text-align: center;">
+    <img src="images/logo.png" alt="Logo" width="200">
+</div>
+""", unsafe_allow_html=True)
+
+def get_base64(file_path):
+    with open(file_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+        
+# DUE IMMAGINI PRINCIPALI
+img_1 = "images/top.jpg"
+img_top = get_base64(img_1)
+
+img_2 = "images/puzzle.jpg"
+img_yacht = get_base64(img_2)
+#-----------------------------
 
 st.write("---")
-
-# Sezione immagini + testo
-col1, col2 = st.columns(2)
+# -----------------------------
+# PRIMA SEZIONE: IMMAGINE A SINISTRA, TESTO A DESTRA
+# -----------------------------
+col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.image("https://via.placeholder.com/400x300.png?text=Immagine+1")
-    st.markdown("<p style='text-align:center;'>Descrizione della prima immagine.</p>", unsafe_allow_html=True)
+    st.markdown(f"""
+    <div style="text-align:center;">
+        <img src="data:image/jpg;base64,{img_top}" 
+            style="width:100%; border-radius:20px; border:2px solid #ffffff;">
+    </div>
+    """, unsafe_allow_html=True)
 
 with col2:
-    st.image("https://via.placeholder.com/400x300.png?text=Immagine+2")
-    st.markdown("<p style='text-align:center;'>Descrizione della seconda immagine.</p>", unsafe_allow_html=True)
+    st.markdown("""
+# E se il vero lusso fosse assistere all'impossibile?
+
+## Simon Le Prestige
+Con oltre 700 apparizioni, Simon Le Prestige ha catturato l’attenzione di attori, cantanti e imprenditori\\
+in Italia, Usa ed Europa,trasformando eventi di lusso in esperienze magiche dal fascino
+assoluto.\\
+Ha avuto consigli dai maghi più eccellenti e famosi del mondo come Silvan e Dynamo ha affinato uno stile unico,\\
+fatto di eleganza e impeccabile presenza scenica.
+""")
 
 st.write("---")
 
-# Seconda sezione testo + immagine
-col3, col4 = st.columns([2,1])
+# -----------------------------
+# SECONDA SEZIONE: TESTO A SINISTRA, IMMAGINE A DESTRA
+# -----------------------------
+col3, col4 = st.columns([2, 1])
 
 with col3:
     st.markdown("""
-    <h2 style='color:white;'>Chi Siamo</h2>
-    <p style='font-size:16px;'>
-    Siamo un team appassionato che lavora per creare esperienze digitali uniche.  
-    Questa sezione serve come esempio di contenuto testuale accanto a un’immagine.  
-    </p>
-    """, unsafe_allow_html=True)
+# Che tipo di eventi esclusivi? 
+Si esibisce esclusivamente in ambienti ultra esclusivi, ville private, super yacht, location boutique e cerimonie riservate\\
+e garantisce un trattamento assolutamente personale.
+Accettando solo 20 performance all’anno, per preservare la qualità e il carattere irripetibile di ogni prestazione.
+""")
 
 with col4:
-    st.image("https://via.placeholder.com/300x400.png?text=Immagine")
+    st.markdown(f"""
+    <div style="text-align:center;">
+        <img src="data:image/jpg;base64,{img_yacht}" 
+            style="width:100%; border-radius:20px; border:2px solid #ffffff;">
+    </div>
+    """, unsafe_allow_html=True)
 
-# Footer contatti e social
+st.write("---")
+
+# -----------------------------
+# GALLERIA CENTRALE (3 COLONNE)
+# -----------------------------
+media = [
+    "images/josè_bobadilla.jpg",
+    "images/yamil_raidan.jpg",
+    "images/magician_silvan.jpg",
+    "images/patrick_wave.jpg",
+    "images/orietta.jpg",
+    "images/porsche.jpg",
+    "images/elio.jpg",
+    "images/hollywood.jpg",
+    "images/dynamo.jpg",
+    "images/jeff_onorato.jpg",
+    "images/scamarcio.jpg",
+    "images/video.mp4"  # video
+]
+
+
+col_left, col_center, col_right = st.columns([1,3,1])
+
+with col_center:
+    st.markdown("## 📸 Galleria\n Ecco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
+    
+    for i in range(0, len(media), 3):
+        cols = st.columns(3)
+        for j, col in enumerate(cols):
+            if i+j < len(media):
+                with col:
+                    file = media[i+j]
+                    if file.lower().endswith((".jpg", ".jpeg", ".png")):
+                        st.image(file, use_container_width=True)
+                    elif file.lower().endswith((".mp4", ".mov", ".webm")):
+                        st.video(file, start_time=0)
+
+st.write("---")
+
+# -----------------------------
+# CONTATTI
+# -----------------------------
 st.markdown("""
-<div class="footer">
-    <p>📍 Via Roma 123, 00100 Roma | 📞 +39 06 1234567 | ✉️ info@azienda.it</p>
-    <p>
-        <a href="https://facebook.com" style="color:#AAAAAA; text-decoration:none;">Facebook</a> |
-        <a href="https://instagram.com" style="color:#AAAAAA; text-decoration:none;">Instagram</a> |
-        <a href="https://linkedin.com" style="color:#AAAAAA; text-decoration:none;">LinkedIn</a>
-    </p>
+<div style="text-align: center;">
+<h2>📩 Contatti</h2>
+<p><strong>Email:</strong> <a href="mailto:tuoindirizzo@email.com">tuoindirizzo@email.com</a></p>
+<p><strong>Telefono:</strong> +39 333 1234567</p>
+<p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
