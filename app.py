@@ -125,21 +125,6 @@ st.write("---")
 # -----------------------------
 # GALLERIA CENTRALE (3 COLONNE)
 # -----------------------------
-media = [
-    "jose_bobadilla.jpg",
-    "yamil_raidan.jpg",
-    "magician_silvan.jpg",
-    "patrick_wave.jpg",
-    "orietta.jpg",
-    "porsche.jpg",
-    "elio.jpg",
-    "hollywood.jpg",
-    "dynamo.jpg",
-    "jeff_onorato.jpg",
-    "scamarcio.jpg",
-    "video.mp4"
-]
-
 
 col_left, col_center, col_right = st.columns([1,3,1])
 
@@ -192,6 +177,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
