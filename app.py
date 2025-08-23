@@ -124,7 +124,7 @@ st.write("---")
 # GALLERIA CENTRALE (3 COLONNE)
 # -----------------------------
 media = [
-    "josè_bobadilla.jpg",
+    "jose_bobadilla.jpg",
     "yamil_raidan.jpg",
     "magician_silvan.jpg",
     "patrick_wave.jpg",
@@ -173,6 +173,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
