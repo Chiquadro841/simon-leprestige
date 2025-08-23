@@ -8,28 +8,13 @@ from pathlib import Path
 # FONT Raleway e Colore
 # -----------------------------
 
-st.markdown("""
-<style>
-/* Main text */
-.css-1d391kg p, .css-1d391kg span, .css-1d391kg div {
-    color: #DCC163 !important;
-    font-family: 'Raleway', sans-serif !important;
-}
+st.markdown(""" <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+<style> html, body, div, p, span, h1, h2, h3, h4, h5, h6, [class*="css"] { 
+font-family: 'Raleway', sans-serif !important; font-weight: 100 !important; /* testi sottili ma leggibili color: #DCC163 !important;*/ } 
 
-/* Headers */
-h1, h2, h3, h4, h5, h6 {
-    color: #DCC163 !important;
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 300 !important;
-}
+p { font-size: 22px !important; /* opzionale: applica specificamente ai paragrafi */ 
 
-/* Sidebar text */
-.css-1d391kg .sidebar-content {
-    color: #DCC163 !important;
-    font-family: 'Raleway', sans-serif !important;
-}
-</style>
-""", unsafe_allow_html=True)
+h1, h2, h3 { font-weight: 300 !important; /* titoli leggermente più spessi */ } </style> """, unsafe_allow_html=True)
 
 # -----------------------------
 # FUNZIONE PER BASE64
