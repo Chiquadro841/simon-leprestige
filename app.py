@@ -18,11 +18,11 @@ html, body, div, p, span, h1, h2, h3, h4, h5, h6, [class*="css"] {
 }
 
 p {
-    font-size: 22px !important;    /* opzionale: applica specificamente ai paragrafi */
+    font-size: 22px !important;   /* opzionale: paragrafi leggermente più grandi */
 }
 
 h1, h2, h3 {
-    font-weight: 300 !important;   /* titoli leggermente più spessi */
+    font-weight: 300 !important;  /* titoli leggermente più spessi */
 }
 </style>
 """, unsafe_allow_html=True)
@@ -180,6 +180,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
