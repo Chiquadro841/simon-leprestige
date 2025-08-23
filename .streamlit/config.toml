@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#DCC163"        # used for buttons, highlights, etc.
+backgroundColor = "#0B0B0B"     # optional: page background
+secondaryBackgroundColor = "#1A1A1A"  # optional: sidebar
+textColor = "#DCC163"           # this sets the default text color
+font = "Raleway"                # use your preferred font (must be supported)
