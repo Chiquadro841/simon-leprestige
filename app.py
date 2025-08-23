@@ -5,9 +5,10 @@ from pathlib import Path
 
 
 # -----------------------------
-# FONT Raleway
+# FONT Raleway e Colore
 # -----------------------------
 
+st.markdown('<p style="color:#DCC163">Questo testo è giallo oro!</p>', unsafe_allow_html=True)
 
 st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
@@ -177,6 +178,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
