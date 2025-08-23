@@ -13,13 +13,16 @@ st.markdown("""
 <style>
 html, body, div, p, span, h1, h2, h3, h4, h5, h6, [class*="css"] {
     font-family: 'Raleway', sans-serif !important;
-    font-weight: 100 !important;  /* testi sottili ma leggibili 
-    color: #DCC163 !important;*/
+    font-weight: 100 !important;  /* testi sottili ma leggibili */
+    color: #DCC163 !important;     /* testo dorato */
 }
+
 p {
-    font-size: 22px !important;   /* opzionale: applica specificamente ai paragrafi */
+    font-size: 22px !important;    /* opzionale: applica specificamente ai paragrafi */
+}
+
 h1, h2, h3 {
-    font-weight: 300 !important;  /* titoli leggermente più spessi */
+    font-weight: 300 !important;   /* titoli leggermente più spessi */
 }
 </style>
 """, unsafe_allow_html=True)
@@ -177,6 +180,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
