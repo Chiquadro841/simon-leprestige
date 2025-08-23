@@ -133,8 +133,8 @@ media_dir = Path.cwd() / "images"
 
 media = [
     "jose_bobadilla.jpg",
-    #"yamil_raidan.jpg",
-    #"magician_silvan.jpg",
+    "yamil_raidan.jpg",
+    "magician_silvan.jpg",
     "patrick_wave.jpg",
     #"orietta.jpg",
     #"porsche.jpg",
@@ -158,7 +158,7 @@ with col_center:
                 with col:
                     file = media_dir / media[i+j]
                     # DEBUG
-                    st.write("DEBUG file path:", file)
+                    #st.write("DEBUG file path:", file)
                     if file.suffix.lower() in [".jpg", ".jpeg", ".png"]:
                         st.image(str(file), use_container_width=True)
                     elif file.suffix.lower() in [".mp4", ".mov", ".webm"]:
@@ -177,6 +177,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
