@@ -136,9 +136,9 @@ media = [
     "yamil_raidan.jpg",
     "magician_silvan.jpg",
     "patrick_wave.jpg",
-    #"orietta.jpg",
-    #"porsche.jpg",
-    #"elio.jpg",
+    "orietta.jpg",
+    "porsche.jpg",
+    "elio.jpg",
     #"hollywood.jpg",
     #"dynamo.jpg",
     #"jeff_onorato.jpg",
@@ -177,6 +177,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
