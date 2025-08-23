@@ -148,6 +148,7 @@ import os
 
 media_dir = os.path.join(os.getcwd(), "images")
 
+
 for i in range(0, len(media), 3):
     cols = st.columns(3)
     for j, col in enumerate(cols):
@@ -172,6 +173,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
