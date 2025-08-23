@@ -9,20 +9,24 @@ from pathlib import Path
 # -----------------------------
 
 st.markdown("""
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
 <style>
-html, body, div, p, span, h1, h2, h3, h4, h5, h6, [class*="css"] {
+/* Main text */
+.css-1d391kg p, .css-1d391kg span, .css-1d391kg div {
+    color: #DCC163 !important;
     font-family: 'Raleway', sans-serif !important;
-    font-weight: 100 !important;  /* testi sottili ma leggibili */
-    color: #DCC163 !important;     /* testo dorato */
 }
 
-p {
-    font-size: 22px !important;   /* opzionale: paragrafi leggermente più grandi */
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #DCC163 !important;
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 300 !important;
 }
 
-h1, h2, h3 {
-    font-weight: 300 !important;  /* titoli leggermente più spessi */
+/* Sidebar text */
+.css-1d391kg .sidebar-content {
+    color: #DCC163 !important;
+    font-family: 'Raleway', sans-serif !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -180,6 +184,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
