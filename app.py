@@ -31,7 +31,7 @@ def get_base64(file_path):
 # -----------------------------
 # SFONDO PAGINA
 # -----------------------------
-img_path = "images/dark_1.jpg"
+img_path = "images/dark_2.jpg"
 img_base64 = get_base64(img_path)
 
 st.markdown(f"""
@@ -176,6 +176,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
