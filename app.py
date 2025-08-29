@@ -55,7 +55,7 @@ st.set_page_config(page_title="Landing Demo", layout="wide")
 # -----------------------------
 st.markdown("""
 <div style="text-align: center;">
-    <img src="images/logo_.jpg" alt="Logo" width="200">
+    <img src="images/logo.jpg" alt="Logo" width="200">
 </div>
 """, unsafe_allow_html=True)
 
@@ -174,6 +174,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
