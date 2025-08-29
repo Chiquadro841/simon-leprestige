@@ -71,7 +71,7 @@ with col1:
     st.empty()  # colonna sinistra vuota
 
 with col2:
-    st.image(logo, width=150)
+    st.image(logo, width=200)
 
 with col3:
     st.markdown("""
@@ -197,6 +197,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
