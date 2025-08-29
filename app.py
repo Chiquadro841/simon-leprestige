@@ -178,8 +178,15 @@ def add_title_to_image(file_path, title):
     except:
         font = ImageFont.load_default()
     
-    # Calcolo posizione centrale orizzontale
-    text_width, text_height = draw.textsize(title, font=font)
+    # Calcola dimensione del testo
+    try:
+        text_width, text_height = font.getsize(title)  # metodo sicuro
+    except:
+        # fallback se getsize non funziona
+        bbox = draw.textbbox((0,0), title, font=font)
+        text_width = bbox[2] - bbox[0]
+        text_height = bbox[3] - bbox[1]
+    
     x = (img.width - text_width) / 2
     y = 10  # distanza dall'alto
     
@@ -191,6 +198,7 @@ def add_title_to_image(file_path, title):
     draw.text((x, y), title, font=font, fill="white")
     
     return img
+
 
 with col_center:
     st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
@@ -224,6 +232,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
