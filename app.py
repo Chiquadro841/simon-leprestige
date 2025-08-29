@@ -152,55 +152,28 @@ col_left, col_center, col_right = st.columns([1,3,1])
 
 media_dir = Path.cwd() / "images"
 
-media = [
-    "jose_bobadilla.jpg",
-    "yamil_raidan.jpg",
-    "magician_silvan.jpg",
-    "patrick_wave.jpg",
-    "orietta.jpg",
-    "porsche.jpg",
-    "elio.jpg",
-    "hollywood.jpg",
-    "dynamo.jpg",
-    "jeff_onorato.jpg",
-    "scamarcio.jpg",
-    "video.mp4"
-]
-
-# titoli corrispondenti
-titles = [
-    "Jose Bobadilla",
-    "Yamil Raidan",
-    "Magician Silvan",
-    "Patrick Wave",
-    "Orietta",
-    "Porsche",
-    "Elio",
-    "Hollywood",
-    "Dynamo",
-    "Jeff Onorato",
-    "Scamarcio",
-    "Video Demo"
-]
-
+media = [ "jose_bobadilla.jpg",
+         "yamil_raidan.jpg",
+         "magician_silvan.jpg",
+         "patrick_wave.jpg",
+         "orietta.jpg",
+         "porsche.jpg",
+         "elio.jpg",
+         "hollywood.jpg",
+         "dynamo.jpg",
+         "jeff_onorato.jpg",
+         "scamarcio.jpg",
+         "video.mp4" ]
 col_left, col_center, col_right = st.columns([1,3,1])
 
 with col_center:
-    st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
+    st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato") 
     
     for i in range(0, len(media), 3):
-        cols = st.columns(3)
-        for j, col in enumerate(cols):
-            if i+j < len(media):
-                file = media_dir / media[i+j]
-                title = titles[i+j]
-                with col:
-                    if file.suffix.lower() in [".jpg", ".jpeg", ".png"]:
-                        st.image(str(file), use_container_width=True)
-                        st.caption(title)  # titolo piccolo sotto l'immagine
-                    elif file.suffix.lower() in [".mp4", ".mov", ".webm"]:
-                        st.video(str(file), start_time=0)
-                        st.caption(title)  # titolo piccolo sotto il video
+        cols = st.columns(3) for j, col in enumerate(cols): if i+j < len(media): with col: file = media_dir / media[i+j] #st.write("DEBUG file path:", file) 
+            
+        if file.suffix.lower() in [".jpg", ".jpeg", ".png"]: st.image(str(file), use_container_width=True) 
+            elif file.suffix.lower() in [".mp4", ".mov", ".webm"]: st.video(str(file), start_time=0)
 
 st.write("---")
 
@@ -215,6 +188,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
