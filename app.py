@@ -171,16 +171,16 @@ media = [
 titles = [
     "Jose Bobadilla",
     "Yamil Raidan",
-    "Magician Silvan",
+    "Silvan the magician",
     "Patrick Wave",
-    "Orietta",
-    "Porsche",
-    "Elio",
+    "Orietta Berti",
+    "",
+    "Elio e le storie tese",
     "Hollywood",
     "Dynamo",
     "Jeff Onorato",
-    "Scamarcio",
-    "Video Demo"
+    "Scamarcio & Porcaroli",
+    ""
 ]
 
 col_left, col_center, col_right = st.columns([1,3,1])
@@ -199,7 +199,6 @@ with col_center:
                         st.markdown(f"**{title}**")  # titolo sopra l'immagine
                         st.image(str(file), use_container_width=True)
                     elif file.suffix.lower() in [".mp4", ".mov", ".webm"]:
-                        st.markdown(f"**{title}**")  # titolo sopra il video
                         st.video(str(file), start_time=0)
 
 st.write("---")
@@ -215,6 +214,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
