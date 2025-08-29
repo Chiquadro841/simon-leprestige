@@ -75,10 +75,10 @@ with col2:
 
 with col3:
     st.markdown("""
-    ### 📩 Contatti  
-    **Email:** [tuoindirizzo@email.com](mailto:tuoindirizzo@email.com)  
-    **Telefono:** +39 333 1234567  
-    **Instagram:** [@simone98rossi](https://www.instagram.com/simone98rossi)  
+    ## Contatti  
+    Email: [tuoindirizzo@email.com](mailto:tuoindirizzo@email.com)  
+    Telefono: +39 333 1234567  
+    Instagram: [@simone98rossi](https://www.instagram.com/simone98rossi)  
     """)
 
 
@@ -197,6 +197,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
