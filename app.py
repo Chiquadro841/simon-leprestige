@@ -150,9 +150,6 @@ st.write("---")
 from pathlib import Path
 import streamlit as st
 
-from pathlib import Path
-import streamlit as st
-
 # Colonne per centrare la galleria
 col_left, col_center, col_right = st.columns([1,3,1])
 
@@ -179,10 +176,15 @@ with col_center:
                 with col:
                     file = media[i+j]
                     file_path = media_dir / file
+                    # Titolo piccolo sopra l'immagine
+                    title = file.split(".")[0].replace("_", " ").title()
+                    st.markdown(f"#### {title}")  # Markdown piccolo sopra l'immagine
+
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path, use_container_width=True)
                     elif file.lower().endswith((".mp4", ".mov", ".webm")):
                         st.video(file_path, start_time=0)
+
 
 
 
@@ -199,6 +201,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
