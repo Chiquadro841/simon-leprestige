@@ -178,7 +178,7 @@ with col_center:
                     file = media_dir / media[i+j] #st.write("DEBUG file path:", file) 
             
                     if file.suffix.lower() in [".jpg", ".jpeg", ".png"]: st.image(str(file), use_container_width=True) 
-                    elif file.suffix.lower() in [".mp4", ".mov", ".webm"]: st.video(str(file), start_time=0)
+                        elif file.suffix.lower() in [".mp4"]: st.video(str(file), start_time=0)
 
 st.write("---")
 
@@ -193,6 +193,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
