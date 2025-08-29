@@ -75,13 +75,10 @@ with col1:
 
 with col3:
     st.markdown("""
-    <div style='font-size:20px; text-align:right;'>
-        <h2>📩 Contatti</h2>
-        <p><strong>Email:</strong> <a href="mailto:tuoindirizzo@email.com">
-        tuoindirizzo@email.com</a></p>
-        <p><strong>Telefono:</strong> +39 333 1234567</p>
-        <p><strong>Instagram:</strong> 
-        <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
+    <div style="display: flex; justify-content: flex-end; gap: 40px; font-size: 18px; align-items: center;">
+        <div>📧 <a href="mailto:tuoindirizzo@email.com">tuoindirizzo@email.com</a></div>
+        <div>📞 +39 333 1234567</div>
+        <div>📸 <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -200,6 +197,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
