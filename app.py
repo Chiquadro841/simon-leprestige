@@ -154,51 +154,21 @@ media_dir = Path.cwd() / "images"
 
 with col_center:
     st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
+col_left, col_center, col_right = st.columns([1,3,1])
 
-    media = [ "jose_bobadilla.jpg", "yamil_raidan.jpg", "magician_silvan.jpg", "patrick_wave.jpg", "orietta.jpg", "porsche.jpg", "elio.jpg",
-             "hollywood.jpg", "dynamo.jpg", "jeff_onorato.jpg", "scamarcio.jpg", "video.mp4" ]
-    # lista dei titoli delle foto (stessa lunghezza della lista media)
-    titoli = [
-        "Jose Bobadilla",
-        "Yamil Raidan",
-        "Magician Silvan",
-        "Patrick Wave",
-        "Orietta",
-        "Porsche",
-        "Elio",
-        "Hollywood",
-        "Dynamo",
-        "Jeff Onorato",
-        "Scamarcio",
-        "Video"
-    ]
+with col_center:
+    st.markdown("## 📸 Galleria\n Ecco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
     
-for i in range(len(media)):
-    file_path = media_dir / media[i]
-    if file_path.suffix.lower() in [".jpg", ".jpeg", ".png"]:
-        img_base64 = get_base64(file_path)
-        st.markdown(f"""
-        <div style="position: relative; width: 300px; display:inline-block; margin:10px; cursor:pointer;">
-            <img src="data:image/jpg;base64,{img_base64}" style="width:100%; display:block;">
-            <div style="
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: rgba(0,0,0,0.6);
-                color: white;
-                text-align: center;
-                opacity: 0;
-                transition: opacity 0.3s;
-                padding: 5px 0;
-            " class="overlay">{titoli[i]}</div>
-        </div>
-        <style>
-        div:hover .overlay {{
-            opacity: 1;
-        }}
-        </style>
-        """, unsafe_allow_html=True)
+    for i in range(0, len(media), 3):
+        cols = st.columns(3)
+        for j, col in enumerate(cols):
+            if i+j < len(media):
+                with col:
+                    file = media[i+j]
+                    if file.lower().endswith((".jpg", ".jpeg", ".png")):
+                        st.image(file, use_container_width=True)
+                    elif file.lower().endswith((".mp4", ".mov", ".webm")):
+                        st.video(file, start_time=0)
 st.write("---")
 
 # -----------------------------
@@ -212,6 +182,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
