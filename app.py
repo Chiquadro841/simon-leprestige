@@ -159,6 +159,29 @@ media = [ "jose_bobadilla.jpg", "yamil_raidan.jpg", "magician_silvan.jpg",
 
 media_dir = Path.cwd() / "images"
 
+def add_title_to_image(file_path, title):
+    img = Image.open(file_path).convert("RGB")
+    draw = ImageDraw.Draw(img)
+    
+    # Carica un font, usa uno di sistema se non vuoi un .ttf esterno
+    try:
+        font = ImageFont.truetype("arial.ttf", 40)
+    except:
+        font = ImageFont.load_default()
+    
+    # Posizione del testo (in alto a sinistra)
+    text_position = (10, 10)
+    
+    # Testo con contorno per leggibilità
+    x, y = text_position
+    draw.text((x-1, y-1), title, font=font, fill="black")
+    draw.text((x+1, y-1), title, font=font, fill="black")
+    draw.text((x-1, y+1), title, font=font, fill="black")
+    draw.text((x+1, y+1), title, font=font, fill="black")
+    draw.text((x, y), title, font=font, fill="white")
+    
+    return img
+
 with col_center:
     st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
     
@@ -170,7 +193,9 @@ with col_center:
                     file = media[i+j]
                     file_path = media_dir / file
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
-                        st.image(file_path, use_container_width=True)
+                        # Sovrapponi titolo (qui usa il nome del file come esempio)
+                        img_with_title = add_title_to_image(file_path, file.split(".")[0])
+                        st.image(img_with_title, use_container_width=True)
                     elif file.lower().endswith((".mp4", ".mov", ".webm")):
                         st.video(file_path, start_time=0)
 
@@ -188,6 +213,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
