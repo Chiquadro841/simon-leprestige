@@ -147,6 +147,9 @@ st.write("---")
 # GALLERIA CENTRALE (3 COLONNE)
 # -----------------------------
 
+from pathlib import Path
+import streamlit as st
+
 col_left, col_center, col_right = st.columns([1,3,1])
 
 media = [ "jose_bobadilla.jpg", "yamil_raidan.jpg", "magician_silvan.jpg",
@@ -158,10 +161,6 @@ media_dir = Path.cwd() / "images"
 
 with col_center:
     st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
-col_left, col_center, col_right = st.columns([1,3,1])
-
-with col_center:
-    st.markdown("## 📸 Galleria\n Ecco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
     
     for i in range(0, len(media), 3):
         cols = st.columns(3)
@@ -169,10 +168,13 @@ with col_center:
             if i+j < len(media):
                 with col:
                     file = media[i+j]
+                    file_path = media_dir / file
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
-                        st.image(file, use_container_width=True)
+                        st.image(file_path, use_container_width=True)
                     elif file.lower().endswith((".mp4", ".mov", ".webm")):
-                        st.video(file, start_time=0)
+                        st.video(file_path, start_time=0)
+
+
 st.write("---")
 
 # -----------------------------
@@ -186,6 +188,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
