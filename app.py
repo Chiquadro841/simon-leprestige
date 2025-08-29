@@ -50,33 +50,23 @@ st.markdown(f"""
 # -----------------------------
 st.set_page_config(page_title="Landing Demo", layout="wide")
 
-# -----------------------------
-# LOGO CENTRATO
-# -----------------------------
 
+# --- Logo ---
+logo = Image.open("images/logo.png")  # meglio PNG trasparente
 
-logo_base64 = get_base64("images/logo.png")  # usa un PNG con sfondo trasparente
-# --- logo a sinistra + contatti a destra ---
-st.markdown(f"""
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+# --- Layout a colonne (logo sinistra, contatti destra) ---
+col1, col2 = st.columns([1, 2])  # proporzioni: logo più stretto, contatti più larghi
 
-    <!-- Logo a sinistra -->
-    <div>
-        <img src="data:image/png;base64,{logo_base64}" alt="Logo" width="150">
-    </div>
+with col1:
+    st.image(logo, width=150)
 
-    <!-- Contatti a destra -->
-    <div style="text-align: right; font-size: 18px;">
-        <h2>📩 Contatti</h2>
-        <p><strong>Email:</strong> <a href="mailto:tuoindirizzo@email.com">
-        tuoindirizzo@email.com</a></p>
-        <p><strong>Telefono:</strong> +39 333 1234567</p>
-        <p><strong>Instagram:</strong> 
-        <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
-    </div>
-
-</div>
-""", unsafe_allow_html=True)
+with col2:
+    st.markdown("""
+    ### 📩 Contatti  
+    **Email:** [tuoindirizzo@email.com](mailto:tuoindirizzo@email.com)  
+    **Telefono:** +39 333 1234567  
+    **Instagram:** [@simone98rossi](https://www.instagram.com/simone98rossi)  
+    """)
 
 
         
@@ -194,6 +184,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
