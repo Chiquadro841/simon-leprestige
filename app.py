@@ -56,11 +56,10 @@ st.set_page_config(page_title="Landing Demo", layout="wide")
 
 
 logo_base64 = get_base64("images/logo.png")  # usa un PNG con sfondo trasparente
-
 # --- logo a sinistra + contatti a destra ---
 st.markdown(f"""
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-    
+
     <!-- Logo a sinistra -->
     <div>
         <img src="data:image/png;base64,{logo_base64}" alt="Logo" width="150">
@@ -78,6 +77,7 @@ st.markdown(f"""
 
 </div>
 """, unsafe_allow_html=True)
+
 
         
 # DUE IMMAGINI PRINCIPALI
@@ -194,6 +194,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
