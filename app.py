@@ -53,9 +53,11 @@ st.set_page_config(page_title="Landing Demo", layout="wide")
 # -----------------------------
 # LOGO CENTRATO
 # -----------------------------
-st.markdown("""
+logo_base64 = get_base64("images/logo.jpg")
+
+st.markdown(f"""
 <div style="text-align: center;">
-    <img src="images/logo.jpg" alt="Logo" width="200">
+    <img src="data:image/jpg;base64,{logo_base64}" width="200">
 </div>
 """, unsafe_allow_html=True)
 
@@ -174,6 +176,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
