@@ -129,7 +129,7 @@ with col3:
     st.markdown("""
 # Che tipo di eventi esclusivi? 
 Si esibisce esclusivamente in ambienti ultra esclusivi, ville private, super yacht, location boutique e cerimonie riservate
-e garantisce un trattamento assolutamente personale.
+e garantisce un trattamento assolutamente personale.\\
 Accettando solo 20 performance all’anno, per preservare la qualità e il carattere irripetibile di ogni prestazione.
 """)
 
@@ -200,6 +200,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
