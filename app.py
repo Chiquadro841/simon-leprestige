@@ -128,9 +128,12 @@ col3, col4 = st.columns([2, 1])
 with col3:
     st.markdown("""
 # Che tipo di eventi esclusivi? 
-Si esibisce esclusivamente in ambienti ultra esclusivi, ville private, super yacht, location boutique e cerimonie riservate
-e garantisce un trattamento assolutamente personale.\\
-Accettando solo 20 performance all’anno, per preservare la qualità e il carattere irripetibile di ogni prestazione.
+Si esibisce esclusivamente in ambienti privati e di altissimo livello, tra cui sontuose ville, super yacht di prestigio, location boutique e cerimonie riservate.\\
+Ogni sua performance è pensata per offrire un’esperienza unica, irripetibile e altamente personalizzata, in cui il pubblico viene immerso in un’atmosfera di meraviglia e stupore.\\
+
+La sua arte non è mai banale: accetta solo 20 performance all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità impeccabile e un carattere assolutamente esclusivo.\\
+Dalla scelta dei dettagli scenici all’interazione con gli ospiti, 
+ogni gesto e ogni effetto sono calibrati percreare un’esperienza memorabile, sofisticata e su misura.
 """)
 
 with col4:
@@ -200,6 +203,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
