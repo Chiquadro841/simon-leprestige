@@ -156,7 +156,7 @@ col_left, col_center, col_right = st.columns([1,3,1])
 # Lista media
 media = [
     "jose_bobadilla.jpg", "yamil_raidan.jpg", "magician_silvan.jpg",
-    "patrick_wave.jpg", "orietta.jpg", "porsche.jpg",
+    "patrick_wave.jpg", "orietta.jpg",
     "elio.jpg", "hollywood.jpg", "dynamo.jpg",
     "jeff_onorato.jpg", "scamarcio.jpg", "video.mp4"
 ]
@@ -201,6 +201,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
