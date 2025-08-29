@@ -152,34 +152,38 @@ col_left, col_center, col_right = st.columns([1,3,1])
 
 media_dir = Path.cwd() / "images"
 
-media = [ "jose_bobadilla.jpg",
-         "yamil_raidan.jpg",
-         "magician_silvan.jpg",
-         "patrick_wave.jpg",
-         "orietta.jpg",
-         "porsche.jpg",
-         "elio.jpg",
-         "hollywood.jpg",
-         "dynamo.jpg",
-         "jeff_onorato.jpg",
-         "scamarcio.jpg",
-         "video.mp4" ]
-
-
 with col_center:
-    st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato") 
+    st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
+    
+    # lista dei titoli delle foto (stessa lunghezza della lista media)
+    titoli = [
+        "Jose Bobadilla",
+        "Yamil Raidan",
+        "Magician Silvan",
+        "Patrick Wave",
+        "Orietta",
+        "Porsche",
+        "Elio",
+        "Hollywood",
+        "Dynamo",
+        "Jeff Onorato",
+        "Scamarcio",
+        "Video"
+    ]
     
     for i in range(0, len(media), 3):
-        cols = st.columns(3) 
+        cols = st.columns(3)
         for j, col in enumerate(cols):
             if i+j < len(media):
-                
                 with col:
-                    file = media_dir / media[i+j] #st.write("DEBUG file path:", file) 
-            
-                    if file.suffix.lower() in [".jpg", ".jpeg", ".png"]: st.image(str(file), use_container_width=True) 
-                    elif file.suffix.lower() in [".mp4"]: st.video(str(file), start_time=0)
-
+                    file = media_dir / media[i+j]
+                    if file.suffix.lower() in [".jpg", ".jpeg", ".png"]:
+                        st.image(str(file), use_container_width=True)
+                        # titolo sotto la foto
+                        st.markdown(f"<p style='text-align:center; font-weight:bold; font-size:16px;'>{titoli[i+j]}</p>", unsafe_allow_html=True)
+                    elif file.suffix.lower() in [".mp4", ".mov", ".webm"]:
+                        st.video(str(file), start_time=0)
+                        st.markdown(f"<p style='text-align:center; font-weight:bold; font-size:16px;'>{titoli[i+j]}</p>", unsafe_allow_html=True)
 st.write("---")
 
 # -----------------------------
@@ -193,6 +197,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
