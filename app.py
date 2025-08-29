@@ -152,57 +152,25 @@ import streamlit as st
 
 from pathlib import Path
 import streamlit as st
-from PIL import Image, ImageDraw, ImageFont
 
 # Colonne per centrare la galleria
 col_left, col_center, col_right = st.columns([1,3,1])
 
 # Lista media
-media = [ "jose_bobadilla.jpg", "yamil_raidan.jpg", "magician_silvan.jpg",
-         "patrick_wave.jpg", "orietta.jpg", "porsche.jpg",
-         "elio.jpg", "hollywood.jpg", "dynamo.jpg",
-         "jeff_onorato.jpg", "scamarcio.jpg", "video.mp4" ]
+media = [
+    "jose_bobadilla.jpg", "yamil_raidan.jpg", "magician_silvan.jpg",
+    "patrick_wave.jpg", "orietta.jpg", "porsche.jpg",
+    "elio.jpg", "hollywood.jpg", "dynamo.jpg",
+    "jeff_onorato.jpg", "scamarcio.jpg", "video.mp4"
+]
 
 media_dir = Path.cwd() / "images"
 
-# Funzione per aggiungere titolo centrato sopra l'immagine
-def add_title_to_image(file_path, title):
-    img = Image.open(file_path)
-    if img.mode != "RGB":
-        img = img.convert("RGB")
-    
-    draw = ImageDraw.Draw(img)
-    
-    try:
-        font = ImageFont.truetype("arial.ttf", 20000)
-    except:
-        font = ImageFont.load_default()
-    
-    # Calcola dimensione del testo
-    try:
-        text_width, text_height = font.getsize(title)  # metodo sicuro
-    except:
-        # fallback se getsize non funziona
-        bbox = draw.textbbox((0,0), title, font=font)
-        text_width = bbox[2] - bbox[0]
-        text_height = bbox[3] - bbox[1]
-    
-    x = (img.width - text_width) / 2
-    y = 10  # distanza dall'alto
-    
-    # Disegna contorno nero per leggibilità
-    for dx, dy in [(-1,-1), (1,-1), (-1,1), (1,1)]:
-        draw.text((x+dx, y+dy), title, font=font, fill="black")
-    
-    # Disegna testo bianco sopra
-    draw.text((x, y), title, font=font, fill="white")
-    
-    return img
-
-
 with col_center:
-    st.markdown("## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato")
-    
+    st.markdown(
+        "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato"
+    )
+
     # Ciclo per mostrare immagini in gruppi di 3
     for i in range(0, len(media), 3):
         cols = st.columns(3)
@@ -212,11 +180,10 @@ with col_center:
                     file = media[i+j]
                     file_path = media_dir / file
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
-                        # Sovrapponi titolo all'immagine
-                        img_with_title = add_title_to_image(file_path, file.split(".")[0])
-                        st.image(img_with_title, use_container_width=True)
+                        st.image(file_path, use_container_width=True)
                     elif file.lower().endswith((".mp4", ".mov", ".webm")):
                         st.video(file_path, start_time=0)
+
 
 
 st.write("---")
@@ -232,6 +199,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
