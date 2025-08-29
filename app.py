@@ -173,35 +173,32 @@ with col_center:
         "Video"
     ]
     
-    for i in range(0, len(media), 3):
-        cols = st.columns(3)
-        for j, col in enumerate(cols):
-            if i+j < len(media) and media[i+j].lower().endswith((".jpg", ".jpeg", ".png")):
-                with col:
-                    file = media_dir / media[i+j]
-                    # HTML per overlay
-                    st.markdown(f"""
-                    <div style="position: relative; width: 100%; cursor: pointer;">
-                        <img src="{file}" style="width:100%;">
-                        <div style="
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            width: 100%;
-                            background: rgba(0, 0, 0, 0.6);
-                            color: white;
-                            opacity: 0;
-                            transition: opacity 0.3s;
-                            text-align: center;
-                            padding: 5px 0;
-                        " class="overlay">{titoli[i+j]}</div>
-                    </div>
-                    <style>
-                    div:hover .overlay {{
-                        opacity: 1;
-                    }}
-                    </style>
-                    """, unsafe_allow_html=True)
+for i in range(len(media)):
+    file_path = media_dir / media[i]
+    if file_path.suffix.lower() in [".jpg", ".jpeg", ".png"]:
+        img_base64 = get_base64(file_path)
+        st.markdown(f"""
+        <div style="position: relative; width: 300px; display:inline-block; margin:10px; cursor:pointer;">
+            <img src="data:image/jpg;base64,{img_base64}" style="width:100%; display:block;">
+            <div style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0,0,0,0.6);
+                color: white;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.3s;
+                padding: 5px 0;
+            " class="overlay">{titoli[i]}</div>
+        </div>
+        <style>
+        div:hover .overlay {{
+            opacity: 1;
+        }}
+        </style>
+        """, unsafe_allow_html=True)
 st.write("---")
 
 # -----------------------------
@@ -215,6 +212,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
