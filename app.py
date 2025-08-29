@@ -167,6 +167,22 @@ media = [
     "video.mp4"
 ]
 
+# lista dei titoli corrispondenti
+titles = [
+    "Jose Bobadilla",
+    "Yamil Raidan",
+    "Magician Silvan",
+    "Patrick Wave",
+    "Orietta",
+    "Porsche",
+    "Elio",
+    "Hollywood",
+    "Dynamo",
+    "Jeff Onorato",
+    "Scamarcio",
+    "Video Demo"
+]
+
 col_left, col_center, col_right = st.columns([1,3,1])
 
 with col_center:
@@ -178,11 +194,12 @@ with col_center:
             if i+j < len(media):
                 with col:
                     file = media_dir / media[i+j]
-                    # DEBUG
-                    #st.write("DEBUG file path:", file)
+                    title = titles[i+j]  # prendi il titolo corrispondente
                     if file.suffix.lower() in [".jpg", ".jpeg", ".png"]:
+                        st.markdown(f"**{title}**")  # titolo sopra l'immagine
                         st.image(str(file), use_container_width=True)
                     elif file.suffix.lower() in [".mp4", ".mov", ".webm"]:
+                        st.markdown(f"**{title}**")  # titolo sopra il video
                         st.video(str(file), start_time=0)
 
 st.write("---")
@@ -198,6 +215,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
