@@ -74,9 +74,16 @@ with col1:
     st.image(logo, width=200)
 
 with col3:
-    st.markdown("<p style='font-size:24px; 
-    "## Contatti  Email: [tuoindirizzo@email.com](mailto:tuoindirizzo@email.com)  Telefono: +39 333 1234567  Instagram: [@simone98rossi](https://www.instagram.com/simone98rossi)",
-                unsafe_allow_html=True)
+    st.markdown("""
+    <div style='font-size:20px; text-align:right;'>
+        <h2>📩 Contatti</h2>
+        <p><strong>Email:</strong> <a href="mailto:tuoindirizzo@email.com">
+        tuoindirizzo@email.com</a></p>
+        <p><strong>Telefono:</strong> +39 333 1234567</p>
+        <p><strong>Instagram:</strong> 
+        <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
+    </div>
+    """, unsafe_allow_html=True)
 
         
 # DUE IMMAGINI PRINCIPALI
@@ -193,6 +200,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
