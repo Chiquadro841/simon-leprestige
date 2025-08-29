@@ -165,7 +165,7 @@ media_dir = Path.cwd() / "images"
 
 with col_center:
     st.markdown(
-        "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato\n"
+        "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato\n \n"
     )
 
     # Ciclo per mostrare immagini in gruppi di 3
@@ -201,6 +201,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
