@@ -184,7 +184,7 @@ with col_center:
                         st.image(file_path)
                     elif file.lower().endswith((".mp4", ".mov", ".webm")):
                         try:
-                            with open(file, "rb") as f:  # legge il video in binario
+                            with open(file_path, "rb") as f:  # legge il video in binario
                                 video_bytes = f.read()
                             st.video(video_bytes, start_time=0)  # passa direttamente i bytes
                         except Exception as e:
@@ -207,6 +207,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
