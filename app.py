@@ -53,11 +53,25 @@ st.set_page_config(page_title="Landing Demo", layout="wide")
 # -----------------------------
 # LOGO CENTRATO
 # -----------------------------
-logo_base64 = get_base64("images/logo.png")
-
+# --- header con logo a sinistra e contatti a destra ---
 st.markdown(f"""
-<div style="text-align: center;">
-    <img src="data:image/png;base64,{logo_base64}" width="300">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+    
+    <!-- Logo a sinistra -->
+    <div style="flex: 1;">
+        <img src="data:image/png;base64,{logo_base64}" alt="Logo" width="150">
+    </div>
+
+    <!-- Contatti a destra -->
+    <div style="flex: 1; text-align: right; font-size: 18px;">
+        <h2>📩 Contatti</h2>
+        <p><strong>Email:</strong> <a href="mailto:tuoindirizzo@email.com">
+        tuoindirizzo@email.com</a></p>
+        <p><strong>Telefono:</strong> +39 333 1234567</p>
+        <p><strong>Instagram:</strong> 
+        <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
+    </div>
+
 </div>
 """, unsafe_allow_html=True)
 
@@ -176,6 +190,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
