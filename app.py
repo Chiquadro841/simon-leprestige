@@ -131,7 +131,7 @@ with col3:
 Si esibisce esclusivamente in ambienti privati e di altissimo livello, tra cui ville, super yacht di prestigio, location boutique e cerimonie riservate.\\
 Ogni sua performance è pensata per offrire un’esperienza unica, irripetibile e altamente personalizzata, in cui il pubblico viene immerso in un’atmosfera di meraviglia e stupore.
 
-La sua arte non è mai banale: accetta solo 20 performance all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità impeccabile e un carattere assolutamente esclusivo.\\
+La sua arte non è mai banale: accetta solo 20 performance all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità impeccabile e un carattere assolutamente esclusivo.
 """)
 
 with col4:
@@ -201,6 +201,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
