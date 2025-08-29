@@ -165,7 +165,7 @@ media_dir = Path.cwd() / "images"
 
 with col_center:
     st.markdown(
-        "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato"
+        "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi Attori, Imprenditori e Maestri che l'hanno perfezionato\n"
     )
 
     # Ciclo per mostrare immagini in gruppi di 3
@@ -178,7 +178,7 @@ with col_center:
                     file_path = media_dir / file
                     # Titolo piccolo sopra l'immagine
                     title = file.split(".")[0].replace("_", " ").title()
-                    st.markdown(f"{title}")  # Markdown piccolo sopra l'immagine
+                    st.markdown(f"<p style='font-size:12px; text-align:center'>{title}</p>", unsafe_allow_html=True)
 
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path, use_container_width=True)
@@ -201,6 +201,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
