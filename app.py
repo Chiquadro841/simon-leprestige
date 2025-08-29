@@ -57,7 +57,7 @@ logo_base64 = get_base64("images/logo.png")
 
 st.markdown(f"""
 <div style="text-align: center;">
-    <img src="data:image/png;base64,{logo_base64}" width="400">
+    <img src="data:image/png;base64,{logo_base64}" width="300">
 </div>
 """, unsafe_allow_html=True)
 
@@ -176,6 +176,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
