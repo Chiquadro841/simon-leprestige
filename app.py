@@ -51,11 +51,20 @@ st.markdown(f"""
 st.set_page_config(page_title="Landing Demo", layout="wide")
 
 
-# --- Logo ---
-logo = Image.open("images/logo.png")  # meglio PNG trasparente
+# Rimuove padding superiore di Streamlit
+st.markdown("""
+    <style>
+        .block-container {
+            padding-top: 1rem;  /* default è circa 6rem */
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-# --- Layout a colonne (logo sinistra, contatti destra) ---
-col1, col2 = st.columns([1, 2])  # proporzioni: logo più stretto, contatti più larghi
+# --- Logo ---
+logo = Image.open("images/logo.png")
+
+# --- Layout a colonne ---
+col1, col2 = st.columns([1, 2])
 
 with col1:
     st.image(logo, width=150)
@@ -184,6 +193,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
