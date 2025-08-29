@@ -158,7 +158,7 @@ media = [
     "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
     "Patrick_Wave.jpg", "Orietta_Berti.jpg",
     "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
-    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Carte_Pregiate.mp4"
+    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg"
 ]
 
 media_dir = Path.cwd() / "images"
@@ -182,16 +182,6 @@ with col_center:
 
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path)
-                    
-                        
-                    elif file.lower().endswith((".mp4", ".mov", ".webm")):
-                        
-                        video_path = Path("images/Carte_Pregiate.mp4")
-                        
-                        st.write(video_path.exists())  # deve essere True
-                        st.video(str(video_path))
-                        file_path = media_dir / file
-                        st.video(str(file_path), start_time=0)
 
 
 
@@ -210,6 +200,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
