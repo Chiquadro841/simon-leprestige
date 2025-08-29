@@ -57,6 +57,7 @@ st.markdown("""
     <style>
         .block-container {
             padding-top: 1rem;  /* abbassa tutto verso l'alto */
+            padding-right: 1 rem
         }
     </style>
 """, unsafe_allow_html=True)
@@ -197,6 +198,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
