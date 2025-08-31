@@ -176,7 +176,8 @@ media = [
 ]
 media_dir = Path.cwd() / "images"
 
-# --- Inizializza indice corrente ---
+
+# --- Inizializza indice ---
 if "slide_index" not in st.session_state:
     st.session_state.slide_index = 0
 
@@ -186,20 +187,22 @@ if "next_click" not in st.session_state:
 if "prev_click" not in st.session_state:
     st.session_state.prev_click = False
 
-# --- Layout carosello: bottoni ai lati e immagine centrale ---
+# --- Layout carosello: bottoni fissi e immagine centrale ---
 col1, col2, col3 = st.columns([1,4,1])
 
-# Bottone Indietro con icona elegante
+# Bottone Indietro con icona Font Awesome
 with col1:
-    if st.button("⬅️", key="prev"):  # puoi sostituire con emoji 🎯 ◀️ ⬅️
+    prev_clicked = st.button("⏴", key="prev")  # icona stile Font Awesome
+    if prev_clicked:
         st.session_state.prev_click = True
 
-# Bottone Avanti con icona elegante
+# Bottone Avanti con icona Font Awesome
 with col3:
-    if st.button("➡️", key="next"):  # puoi sostituire con emoji 🎯 ▶️ ➡️
+    next_clicked = st.button("⏵", key="next")  # icona stile Font Awesome
+    if next_clicked:
         st.session_state.next_click = True
 
-# --- Aggiorna indice in base al click ---
+# --- Aggiorna indice ---
 if st.session_state.next_click:
     st.session_state.slide_index = (st.session_state.slide_index + 1) % len(media)
     st.session_state.next_click = False
@@ -207,19 +210,11 @@ if st.session_state.prev_click:
     st.session_state.slide_index = (st.session_state.slide_index - 1) % len(media)
     st.session_state.prev_click = False
 
-# Mostra immagine centrale, centrata
+# --- Mostra immagine centrata usando st.image ---
 with col2:
     filename, title = media[st.session_state.slide_index]
     img = Image.open(media_dir / filename)
-    st.markdown(
-        f"""
-        <div style="display:flex; justify-content:center;">
-            <img src="{media_dir / filename}" style="max-width:400px; height:auto; border-radius:10px;">
-        </div>
-        <p style='text-align:center;'>{title}</p>
-        """,
-        unsafe_allow_html=True
-    )
+    st.image(img, caption=title, width=400)
 
 
 
@@ -281,6 +276,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
