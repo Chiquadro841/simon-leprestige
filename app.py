@@ -134,7 +134,7 @@ with col3:
 - Cerimonie riservate
 - Location boutique
 
-Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità, personalizzazione di lusso elevato.
+Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
 """)
 
 with col4:
@@ -204,6 +204,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
