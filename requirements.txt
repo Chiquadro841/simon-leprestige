@@ -1,0 +1,1 @@
+streamlit-carousel==1.1.2
