@@ -181,26 +181,30 @@ media_dir = Path.cwd() / "images"
 if "slide_index" not in st.session_state:
     st.session_state.slide_index = 0
 
+# --- Inizializza indice ---
+if "slide_index" not in st.session_state:
+    st.session_state.slide_index = 0
+
 # --- Inizializza click bottoni ---
 if "next_click" not in st.session_state:
     st.session_state.next_click = False
 if "prev_click" not in st.session_state:
     st.session_state.prev_click = False
 
-# --- Layout carosello: bottoni fissi e immagine centrale ---
-col1, col2, col3 = st.columns([1,4,1])
+# --- Bottone Indietro centrato ---
+prev_clicked = st.button("⏴", key="prev")
+if prev_clicked:
+    st.session_state.slide_index = (st.session_state.slide_index - 1) % len(media)
 
-# Bottone Indietro con icona Font Awesome
-with col1:
-    prev_clicked = st.button("⏴", key="prev")  # icona stile Font Awesome
-    if prev_clicked:
-        st.session_state.prev_click = True
+# --- Mostra immagine centrata ---
+filename, title = media[st.session_state.slide_index]
+img = Image.open(media_dir / filename)
+st.image(img, caption=title, width=400, use_column_width=False)
 
-# Bottone Avanti con icona Font Awesome
-with col3:
-    next_clicked = st.button("⏵", key="next")  # icona stile Font Awesome
-    if next_clicked:
-        st.session_state.next_click = True
+# --- Bottone Avanti centrato ---
+next_clicked = st.button("⏵", key="next")
+if next_clicked:
+    st.session_state.slide_index = (st.session_state.slide_index + 1) % len(media)
 
 # --- Aggiorna indice ---
 if st.session_state.next_click:
@@ -276,6 +280,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
