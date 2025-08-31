@@ -162,7 +162,7 @@ media = [
     "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
     "Patrick_Wave.jpg", "Orietta_Berti.jpg",
     "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
-    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpg
+    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpg"
 ]
 
 media_dir = Path.cwd() / "images"
@@ -204,6 +204,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
