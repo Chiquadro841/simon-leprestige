@@ -155,6 +155,41 @@ with col4:
 
 st.write("---")
 
+#-----------------------------
+from pathlib import Path
+from PIL import Image
+import streamlit as st
+
+# Lista immagini + titoli
+media = [
+    ("Josè_Bobadilla.jpg", "Josè Bobadilla"),
+    ("Yamil_Raidan.jpg", "Yamil Raidan"),
+    ("Silvan.jpg", "Silvan"),
+    ("Patrick_Wave.jpg", "Patrick Wave"),
+    ("Orietta_Berti.jpg", "Orietta Berti"),
+    ("Elio_e_le_storie_tese.jpg", "Elio e le Storie Tese"),
+    ("Hollywood.jpg", "Hollywood"),
+    ("Dynamo.jpg", "Dynamo"),
+    ("Jeff_Onorato.jpg", "Jeff Onorato"),
+    ("Scamarcio_e_Porcaroli.jpg", "Scamarcio e Porcaroli"),
+    ("Rafael_Ayala.jpeg", "Rafael Ayala"),
+]
+
+media_dir = Path.cwd() / "images"
+
+# Slider per scegliere l’immagine
+idx = st.slider("Sfoglia le foto", 0, len(media)-1, 0)
+
+# Mostra immagine + titolo
+file, title = media[idx]
+img = Image.open(media_dir / file)
+
+st.image(img, caption=title, use_column_width=True)
+
+
+
+
+"""
 # -----------------------------
 # GALLERIA CENTRALE (3 COLONNE)
 # -----------------------------
@@ -195,7 +230,7 @@ with col_center:
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path)
 
-
+"""
 
 
 
@@ -212,6 +247,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
