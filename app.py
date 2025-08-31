@@ -77,8 +77,8 @@ with col1:
 with col3:
     st.markdown("""
     <div style="font-size:16px; text-align:left;">
-        <div>Email: <a href="mailto:tuoindirizzo@email.com">tuoindirizzo@email.com</a></div>
-        <div>Telefono: +39 3331234567</div>
+        <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
+        <div>Telefono: +39 3804772858</div>
         <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
     </div>
     """, unsafe_allow_html=True)
@@ -199,11 +199,12 @@ st.write("---")
 st.markdown("""
 <div style="text-align: center;">
 <h2>📩 Contatti</h2>
-<p><strong>Email:</strong> <a href="mailto:tuoindirizzo@email.com">tuoindirizzo@email.com</a></p>
-<p><strong>Telefono:</strong> +39 333 1234567</p>
+<p><strong>Email:</strong> <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></p>
+<p><strong>Telefono:</strong> +39 3804772858</p>
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
