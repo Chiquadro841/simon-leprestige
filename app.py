@@ -66,13 +66,20 @@ st.markdown("""
 logo = Image.open("images/logo4.png")  # meglio PNG trasparente
 
 # --- Layout a 3 colonne: sinistra vuota, centro logo, destra contatti ---
-col1, col2, col3 = st.columns([1.6, 1.8, 1])  # proporzioni: logo stretto, contatti più larghi
+col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
 with col1:
     st.empty()  # colonna sinistra vuota
 
 with col2:
-    st.image(logo, width=200)
+    st.markdown(
+        f"""
+        <div style="text-align: center;">
+            <img src="images/logo4.png" width="200">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 with col3:
     st.markdown("""
@@ -204,6 +211,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
