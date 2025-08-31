@@ -194,45 +194,6 @@ with col_center:
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path)
 
-st.markdown(
-    """
-    <style>
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        justify-items: center;
-    }
-    .gallery img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
-    .gallery p {
-        font-size: 12px;
-        text-align: center;
-        margin-top: 5px;
-    }
-    </style>
-    """, unsafe_allow_html=True
-)
-
-# Creazione galleria
-html_content = '<div class="gallery">'
-for file in media:
-    title = file.split(".")[0].replace("_", " ").title()
-    file_path = media_dir / file
-    html_content += f"""
-    <div>
-        <img src="{file_path}" alt="{title}">
-        <p>{title}</p>
-    </div>
-    """
-html_content += '</div>'
-
-st.markdown(html_content, unsafe_allow_html=True)
-
-
 
 
 st.write("---")
@@ -248,6 +209,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
