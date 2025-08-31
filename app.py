@@ -179,25 +179,39 @@ media_dir = Path.cwd() / "images"
 if "slide_index" not in st.session_state:
     st.session_state.slide_index = 0
 
+# --- Inizializza click bottoni ---
+if "next_click" not in st.session_state:
+    st.session_state.next_click = False
+if "prev_click" not in st.session_state:
+    st.session_state.prev_click = False
+
 # --- Layout carosello: bottoni fissi ai lati e immagine centrale ---
 col1, col2, col3 = st.columns([1,4,1])
 
 # Bottone Indietro
 with col1:
     if st.button("⬅️", key="prev"):
-        st.session_state.slide_index = (st.session_state.slide_index - 1) % len(media)
+        st.session_state.prev_click = True
+
+# Bottone Avanti
+with col3:
+    if st.button("➡️", key="next"):
+        st.session_state.next_click = True
+
+# --- Aggiorna indice in base al click ---
+if st.session_state.next_click:
+    st.session_state.slide_index = (st.session_state.slide_index + 1) % len(media)
+    st.session_state.next_click = False  # reset
+if st.session_state.prev_click:
+    st.session_state.slide_index = (st.session_state.slide_index - 1) % len(media)
+    st.session_state.prev_click = False  # reset
 
 # Mostra immagine centrale
 with col2:
     filename, title = media[st.session_state.slide_index]
     img = Image.open(media_dir / filename)
-    st.image(img, caption=title, width=400)  # larghezza controllata
+    st.image(img, caption=title, width=400)
     st.markdown(f"<p style='text-align:center;'>{title}</p>", unsafe_allow_html=True)
-
-# Bottone Avanti
-with col3:
-    if st.button("➡️", key="next"):
-        st.session_state.slide_index = (st.session_state.slide_index + 1) % len(media)
 
 
 
@@ -259,6 +273,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
