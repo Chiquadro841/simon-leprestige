@@ -88,7 +88,7 @@ with col3:
 img_1 = "images/top.jpg"
 img_top = get_base64(img_1)
 
-img_2 = "images/puzzle.jpg"
+img_2 = "images/puzzle2.jpg"
 img_yacht = get_base64(img_2)
 #-----------------------------
 
@@ -204,6 +204,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
