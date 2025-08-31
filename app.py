@@ -154,75 +154,6 @@ with col4:
     """, unsafe_allow_html=True)
 
 st.write("---")
-
-#-----------------------------
-from pathlib import Path
-from streamlit_carousel import carousel
-from PIL import Image
-
-# Lista immagini + titoli
-media = [
-    ("Josè_Bobadilla.jpg", "Josè Bobadilla"),
-    ("Yamil_Raidan.jpg", "Yamil Raidan"),
-    ("Silvan.jpg", "Silvan"),
-    ("Patrick_Wave.jpg", "Patrick Wave"),
-    ("Orietta_Berti.jpg", "Orietta Berti"),
-    ("Elio_e_le_storie_tese.jpg", "Elio e le Storie Tese"),
-    ("Hollywood.jpg", "Hollywood"),
-    ("Dynamo.jpg", "Dynamo"),
-    ("Jeff_Onorato.jpg", "Jeff Onorato"),
-    ("Scamarcio_e_Porcaroli.jpg", "Scamarcio e Porcaroli"),
-    ("Rafael_Ayala.jpeg", "Rafael Ayala"),
-]
-media_dir = Path.cwd() / "images"
-
-
-# --- Inizializza indice ---
-if "slide_index" not in st.session_state:
-    st.session_state.slide_index = 0
-
-# --- Inizializza indice ---
-if "slide_index" not in st.session_state:
-    st.session_state.slide_index = 0
-
-# --- Inizializza click bottoni ---
-if "next_click" not in st.session_state:
-    st.session_state.next_click = False
-if "prev_click" not in st.session_state:
-    st.session_state.prev_click = False
-
-# --- Bottone Indietro centrato ---
-prev_clicked = st.button("⏴", key="prev")
-if prev_clicked:
-    st.session_state.slide_index = (st.session_state.slide_index - 1) % len(media)
-
-# --- Mostra immagine centrata ---
-filename, title = media[st.session_state.slide_index]
-img = Image.open(media_dir / filename)
-st.image(img, caption=title, width=400, use_column_width=False)
-
-# --- Bottone Avanti centrato ---
-next_clicked = st.button("⏵", key="next")
-if next_clicked:
-    st.session_state.slide_index = (st.session_state.slide_index + 1) % len(media)
-
-# --- Aggiorna indice ---
-if st.session_state.next_click:
-    st.session_state.slide_index = (st.session_state.slide_index + 1) % len(media)
-    st.session_state.next_click = False
-if st.session_state.prev_click:
-    st.session_state.slide_index = (st.session_state.slide_index - 1) % len(media)
-    st.session_state.prev_click = False
-
-# --- Mostra immagine centrata usando st.image ---
-with col2:
-    filename, title = media[st.session_state.slide_index]
-    img = Image.open(media_dir / filename)
-    st.image(img, caption=title, width=400)
-
-
-
-"""
 # -----------------------------
 # GALLERIA CENTRALE (3 COLONNE)
 # -----------------------------
@@ -263,7 +194,6 @@ with col_center:
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path)
 
-"""
 
 
 
@@ -280,6 +210,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
