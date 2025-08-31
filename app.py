@@ -75,7 +75,7 @@ with col2:
     st.markdown(
         f"""
         <div style="text-align: center;">
-            <img src="images/logo4.png" width="200">
+            <img src="images/logo.png" width="200">
         </div>
         """,
         unsafe_allow_html=True
@@ -211,6 +211,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
