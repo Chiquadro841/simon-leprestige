@@ -62,20 +62,21 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Logo ---
-logo = Image.open("images/logo4.png")  # meglio PNG trasparente
-
 # --- Layout a 3 colonne: sinistra vuota, centro logo, destra contatti ---
 col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
 with col1:
     st.empty()  # colonna sinistra vuota
 
+# converto il file PNG in base64
+with open("images/logo4.png", "rb") as f:
+    logo_base64 = base64.b64encode(f.read()).decode()
+
 with col2:
     st.markdown(
         f"""
         <div style="text-align: center;">
-            <img src="images/logo.png" width="200">
+            <img src="data:image/png;base64,{logo_base64}" width="200">
         </div>
         """,
         unsafe_allow_html=True
@@ -211,6 +212,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
