@@ -175,19 +175,27 @@ media = [
 ]
 media_dir = Path.cwd() / "images"
 
+# Prepara gli items
 items = [
     dict(
         title=title,
-        text="",
+        text="",            # testo opzionale
         img=str(media_dir / filename)
     )
     for filename, title in media
 ]
 
-carousel(items=items, width=1, container_height=400)
-
-st.image(img, caption=title, use_column_width=False)
-
+# Carosello piccolo, centrato
+carousel(
+    items=items,
+    width=0.5,              # metà larghezza della pagina
+    container_height=300,    # altezza del carosello
+    slide=True,             # transizione slide
+    fade=False,             # senza fade
+    controls=True,          # frecce avanti/indietro
+    indicators=True,        # puntini in basso
+    wrap=True               # ricomincia da capo
+)
 
 
 
@@ -249,6 +257,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
