@@ -186,14 +186,7 @@ items = [
 
 carousel(items=items, widht=1, container_height:"400px" )  # puoi aggiungere dimensioni
 
-
-
-
-
-
-
-
-st.image(img, caption=title, use_column_width=True)
+st.image(img, caption=title, use_column_width=False)
 
 
 
@@ -256,6 +249,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
