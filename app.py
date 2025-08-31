@@ -158,6 +158,7 @@ st.write("---")
 #-----------------------------
 from pathlib import Path
 from streamlit_carousel import carousel
+from PIL import Image
 
 # Lista immagini + titoli
 media = [
@@ -280,6 +281,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
