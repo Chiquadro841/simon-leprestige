@@ -175,68 +175,24 @@ media = [
 ]
 media_dir = Path.cwd() / "images"
 
-# Genera HTML delle slide
-slides_html = ""
-for i, (filename, title) in enumerate(media):
-    slides_html += f"""
-    <div class="slide" style="display:{'block' if i==0 else 'none'};">
-        <img src="{media_dir / filename}" style="width:300px; border-radius:10px; display:block; margin:auto;">
-        <p style="text-align:center;">{title}</p>
-    </div>
-    """
+# Inizializza indice corrente
+if "slide_index" not in st.session_state:
+    st.session_state.slide_index = 0
 
-# HTML completo con controlli
-html_code = f"""
-<style>
-.slide img {{
-    border-radius: 10px;
-}}
-.button-container {{
-    text-align:center;
-    margin-top: 10px;
-}}
-button {{
-    padding:5px 10px;
-    margin:2px;
-    border:none;
-    background-color:#4CAF50;
-    color:white;
-    border-radius:5px;
-    cursor:pointer;
-}}
-</style>
+# Mostra immagine corrente
+filename, title = media[st.session_state.slide_index]
+img = Image.open(media_dir / filename)
 
-{slides_html}
+st.image(img, caption=title, width=300)  # larghezza ridotta
 
-<div class="button-container">
-    <button onclick="prevSlide()">⬅️</button>
-    <button onclick="nextSlide()">➡️</button>
-</div>
-
-<script>
-let slideIndex = 0;
-const slides = document.getElementsByClassName('slide');
-
-function showSlide(n){{
-    for(let i=0; i<slides.length; i++){{
-        slides[i].style.display = 'none';
-    }}
-    slides[n].style.display = 'block';
-}}
-
-function nextSlide(){{
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-}}
-
-function prevSlide(){{
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-    showSlide(slideIndex);
-}}
-</script>
-"""
-
-st.components.v1.html(html_code, height=400)
+# Bottoni di navigazione centrati
+col1, col2, col3 = st.columns([1,2,1])
+with col1:
+    if st.button("⬅️ Indietro"):
+        st.session_state.slide_index = (st.session_state.slide_index - 1) % len(media)
+with col3:
+    if st.button("Avanti ➡️"):
+        st.session_state.slide_index = (st.session_state.slide_index + 1) % len(media)
 
 
 
@@ -298,6 +254,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
