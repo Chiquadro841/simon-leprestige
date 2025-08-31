@@ -175,43 +175,65 @@ media = [
 ]
 media_dir = Path.cwd() / "images"
 
-# crea HTML per il carosello
+# Genera HTML delle slide
 slides_html = ""
 for i, (filename, title) in enumerate(media):
     slides_html += f"""
-    <div class="slide" style="display: {'block' if i==0 else 'none'};">
-        <img src="{media_dir / filename}" style="width:300px; margin:auto; display:block;">
+    <div class="slide" style="display:{'block' if i==0 else 'none'};">
+        <img src="{media_dir / filename}" style="width:300px; border-radius:10px; display:block; margin:auto;">
         <p style="text-align:center;">{title}</p>
     </div>
     """
 
+# HTML completo con controlli
 html_code = f"""
 <style>
 .slide img {{
     border-radius: 10px;
 }}
+.button-container {{
+    text-align:center;
+    margin-top: 10px;
+}}
+button {{
+    padding:5px 10px;
+    margin:2px;
+    border:none;
+    background-color:#4CAF50;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}}
 </style>
+
 {slides_html}
+
+<div class="button-container">
+    <button onclick="prevSlide()">⬅️</button>
+    <button onclick="nextSlide()">➡️</button>
+</div>
+
 <script>
 let slideIndex = 0;
 const slides = document.getElementsByClassName('slide');
-function showSlide(n) {{
-    for(let i=0;i<slides.length;i++){{slides[i].style.display='none';}}
-    slides[n].style.display='block';
+
+function showSlide(n){{
+    for(let i=0; i<slides.length; i++){{
+        slides[i].style.display = 'none';
+    }}
+    slides[n].style.display = 'block';
 }}
-function nextSlide() {{
+
+function nextSlide(){{
     slideIndex = (slideIndex + 1) % slides.length;
     showSlide(slideIndex);
 }}
-function prevSlide() {{
+
+function prevSlide(){{
     slideIndex = (slideIndex - 1 + slides.length) % slides.length;
     showSlide(slideIndex);
 }}
 </script>
-<div style="text-align:center;">
-<button onclick="prevSlide()">⬅️</button>
-<button onclick="nextSlide()">➡️</button>
-</div>
 """
 
 st.components.v1.html(html_code, height=400)
@@ -276,6 +298,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
