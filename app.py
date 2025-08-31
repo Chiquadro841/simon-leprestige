@@ -157,8 +157,7 @@ st.write("---")
 
 #-----------------------------
 from pathlib import Path
-from PIL import Image
-import streamlit as st
+from streamlit_carousel import carousel
 
 # Lista immagini + titoli
 media = [
@@ -174,15 +173,25 @@ media = [
     ("Scamarcio_e_Porcaroli.jpg", "Scamarcio e Porcaroli"),
     ("Rafael_Ayala.jpeg", "Rafael Ayala"),
 ]
-
 media_dir = Path.cwd() / "images"
 
-# Slider per scegliere l’immagine
-idx = st.slider("Sfoglia le foto", 0, len(media)-1, 0)
+items = [
+    dict(
+        title=title,
+        text="",
+        img=str(media_dir / filename)
+    )
+    for filename, title in media
+]
 
-# Mostra immagine + titolo
-file, title = media[idx]
-img = Image.open(media_dir / file)
+carousel(items=items, width="600px", height="400px")  # puoi aggiungere dimensioni
+
+
+
+
+
+
+
 
 st.image(img, caption=title, use_column_width=True)
 
@@ -247,6 +256,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
