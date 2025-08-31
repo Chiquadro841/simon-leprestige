@@ -175,27 +175,46 @@ media = [
 ]
 media_dir = Path.cwd() / "images"
 
-# Prepara gli items
-items = [
-    dict(
-        title=title,
-        text="",            # testo opzionale
-        img=str(media_dir / filename)
-    )
-    for filename, title in media
-]
+# crea HTML per il carosello
+slides_html = ""
+for i, (filename, title) in enumerate(media):
+    slides_html += f"""
+    <div class="slide" style="display: {'block' if i==0 else 'none'};">
+        <img src="{media_dir / filename}" style="width:300px; margin:auto; display:block;">
+        <p style="text-align:center;">{title}</p>
+    </div>
+    """
 
-# Carosello piccolo, centrato
-carousel(
-    items=items,
-    width=0.1,              # metà larghezza della pagina
-    container_height=500,    # altezza del carosello
-    slide=False,             # transizione slide
-    fade=False,             # senza fade
-    controls=True,          # frecce avanti/indietro
-    indicators=False,        # puntini in basso
-    wrap=True               # ricomincia da capo
-)
+html_code = f"""
+<style>
+.slide img {{
+    border-radius: 10px;
+}}
+</style>
+{slides_html}
+<script>
+let slideIndex = 0;
+const slides = document.getElementsByClassName('slide');
+function showSlide(n) {{
+    for(let i=0;i<slides.length;i++){{slides[i].style.display='none';}}
+    slides[n].style.display='block';
+}}
+function nextSlide() {{
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}}
+function prevSlide() {{
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+}}
+</script>
+<div style="text-align:center;">
+<button onclick="prevSlide()">⬅️</button>
+<button onclick="nextSlide()">➡️</button>
+</div>
+"""
+
+st.components.v1.html(html_code, height=400)
 
 
 
@@ -257,6 +276,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
