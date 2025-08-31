@@ -127,7 +127,12 @@ col3, col4 = st.columns([2, 1])
 
 with col3:
     st.markdown("""
-# Eventi esclusivi dove puoi stupire i tuoi ospiti
+# Eventi esclusivi dove puoi stupire i tuoi ospiti:
+- Yacht
+- Jet
+- Ville
+- Cerimonie riservate
+- Location boutique
 Si esibisce esclusivamente in ambienti privati e di altissimo livello, tra cui ville, super yacht di prestigio, location boutique e cerimonie riservate.\\
 Ogni sua performance è pensata per offrire un’esperienza unica, irripetibile e altamente personalizzata, in cui il pubblico viene immerso in un’atmosfera di meraviglia e stupore.
 
@@ -201,6 +206,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
