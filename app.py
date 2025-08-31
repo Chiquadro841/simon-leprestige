@@ -188,12 +188,12 @@ items = [
 # Carosello piccolo, centrato
 carousel(
     items=items,
-    width=0.5,              # metà larghezza della pagina
-    container_height=300,    # altezza del carosello
-    slide=True,             # transizione slide
+    width=0.1,              # metà larghezza della pagina
+    container_height=500,    # altezza del carosello
+    slide=False,             # transizione slide
     fade=False,             # senza fade
     controls=True,          # frecce avanti/indietro
-    indicators=True,        # puntini in basso
+    indicators=False,        # puntini in basso
     wrap=True               # ricomincia da capo
 )
 
@@ -257,6 +257,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
