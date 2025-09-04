@@ -79,12 +79,12 @@ st.markdown("""
 # --- Layout a 3 colonne: sinistra vuota, centro logo, destra contatti ---
 col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
-cell="Telefono"
+if lang == "Italiano":
+    cell="Telefono"
+    
 with col1:
     st.empty()
     
-    
-
 # converto il file PNG in base64
 with open("images/logo4.png", "rb") as f:
     logo_base64 = base64.b64encode(f.read()).decode()
@@ -277,6 +277,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
