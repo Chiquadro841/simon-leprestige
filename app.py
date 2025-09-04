@@ -179,7 +179,7 @@ st.markdown(
 
 
 # Numero massimo di immagini per riga
-images_per_row = 3
+images_per_row = 5
 image_width = 100  # larghezza piccola
 
 # Ciclo sulle immagini in blocchi
@@ -225,6 +225,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
