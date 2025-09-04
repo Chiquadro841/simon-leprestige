@@ -177,9 +177,13 @@ st.markdown(
         "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     )
 
+
+# Larghezza desiderata per le immagini
+image_width = 250  # puoi cambiare questo valore
+
 # Ciclo per gruppi di 3 immagini
 for i in range(0, len(media), 3):
-    cols = st.columns([4,1,4])  # Tre colonne uguali
+    cols = st.columns([1,1,1])  # Tre colonne uguali
     for j, col in enumerate(cols):
         if i + j < len(media):
             file = media[i+j]
@@ -187,7 +191,7 @@ for i in range(0, len(media), 3):
             title = file.split(".")[0].replace("_", " ").title()
             with col:
                 st.markdown(f"<p style='text-align:center; font-size:12px'>{title}</p>", unsafe_allow_html=True)
-                st.image(file_path, use_column_width=True)  # Centra automaticamente e scala
+                st.image(file_path, width=image_width)
 """
     # Ciclo per mostrare immagini in gruppi di 3
     for i in range(0, len(media), 3):
@@ -219,6 +223,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
