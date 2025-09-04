@@ -109,21 +109,15 @@ with col3:
 
 
     # --- Selettore lingua ---
-    st.markdown("""
-        <style>
-            .language-selector {
-                display: flex;
-                justify-content: right;
-                margin-right: 0px;
-                
-        </style>
-        """, unsafe_allow_html=True)
-
-    lang = st.selectbox("",
-    options=["Italiano", "English", "Français"],
-    index=0,  # default Italiano
-    key="lang_select"
+    # --- Selettore lingua centrato ---
+    st.markdown("<div style='text-align:center; margin-top:10px;'>🌐</div>", unsafe_allow_html=True)
+    lang = st.selectbox(
+        "",
+        options=["Italiano", "English", "Français"],
+        index=0,
+        key="lang_select"
     )
+    
     # --- Testi multilingua ---
 if lang == "Italiano":
     title1 = "E se il vero lusso fosse assistere all'impossibile?"
@@ -272,6 +266,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
