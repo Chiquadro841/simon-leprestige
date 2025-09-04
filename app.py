@@ -119,10 +119,10 @@ with col3:
         </style>
         """, unsafe_allow_html=True)
 
-        lang = st.selectbox("",
-        options=["Italiano", "English", "Français"],
-        index=0,  # default Italiano
-        key="lang_select"
+    lang = st.selectbox("",
+    options=["Italiano", "English", "Français"],
+    index=0,  # default Italiano
+    key="lang_select"
     )
     # --- Testi multilingua ---
 if lang == "Italiano":
@@ -272,6 +272,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
