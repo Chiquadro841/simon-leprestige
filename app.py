@@ -89,6 +89,32 @@ st.markdown("""
 col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
 with col1:
+    st.empty()
+    
+    
+
+# converto il file PNG in base64
+with open("images/logo4.png", "rb") as f:
+    logo_base64 = base64.b64encode(f.read()).decode()
+
+with col2:
+    st.markdown(
+        f"""
+        <div style="text-align: center;">
+            <img src="data:image/png;base64,{logo_base64}" width="200">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with col3:
+    st.markdown(f"""
+    <div style="font-size:16px; text-align:center;">
+        <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
+        <div>{cell}: +39 3804772858</div>
+        <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
+    </div>
+    """, unsafe_allow_html=True)
     lang = st.selectbox("",
     options=["Italiano", "English", "Français"],
     index=0,  # default Italiano
@@ -137,30 +163,6 @@ elif lang == "Français":
     
     cell = "Téléphone"
     contatti = "Contacts"
-    
-
-# converto il file PNG in base64
-with open("images/logo4.png", "rb") as f:
-    logo_base64 = base64.b64encode(f.read()).decode()
-
-with col2:
-    st.markdown(
-        f"""
-        <div style="text-align: center;">
-            <img src="data:image/png;base64,{logo_base64}" width="200">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-with col3:
-    st.markdown(f"""
-    <div style="font-size:16px; text-align:center;">
-        <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
-        <div>{cell}: +39 3804772858</div>
-        <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
-    </div>
-    """, unsafe_allow_html=True)
 
         
 # DUE IMMAGINI PRINCIPALI
@@ -266,6 +268,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
