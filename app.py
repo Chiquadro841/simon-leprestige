@@ -115,9 +115,30 @@ fatto di eleganza e impeccabile presenza scenica."
 Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
 """
     
+    text3="## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
+    cell= "Telefono"
+
 elif lang == "English":
-    header_title = "What if true luxury was witnessing the impossible?"
-    subheader_text = "Simon Le Prestige has captured the attention of actors, singers, and entrepreneurs..."
+    title1 = "What if true luxury was witnessing the impossible?"
+    text1 = """With over 700 shows, Simon Le Prestige has captured the attention of actors,
+            singers, and entrepreneurs in Italy, the US, and Europe, transforming luxury events into magical experiences of absolute charm.
+
+            He has received advice from the world's most renowned and renowned magicians, such as Silvan and Dynamo,
+            and has honed a unique style, characterized by elegance and impeccable stage presence."""
+
+    title2 = "# Exclusive events where you can amaze your guests:"
+    text2 ="""
+- Yacht
+- Jet
+- Villas
+- Private Cerimonies
+- Location boutique
+
+He accepts only 20 annual shows, ensuring that every single spectacle preserves an high level of quality and luxury customization.
+"""
+    
+    text3="## 📸 Gallery\nTake a look at some photos where he amazed  famous actors, magic masters and international entrepreneurs.\n \n"
+    cell= "Phone"
 elif lang == "Français":
     header_title = "Et si le véritable luxe était de voir l'impossible?"
     subheader_text = "Simon Le Prestige a captivé l'attention des acteurs, chanteurs et entrepreneurs..."
@@ -141,10 +162,10 @@ with col2:
     )
 
 with col3:
-    st.markdown("""
+    st.markdown(f"""
     <div style="font-size:16px; text-align:center;">
         <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
-        <div>Telefono: +39 3804772858</div>
+        <div>{cell}: +39 3804772858</div>
         <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
     </div>
     """, unsafe_allow_html=True)
@@ -221,7 +242,7 @@ media_dir = Path.cwd() / "images"
 
 
 st.markdown(
-        "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
+        f"{text3}"
     )
     # Ciclo per mostrare immagini in gruppi di 3
 for i in range(0, len(media), 3):
@@ -245,14 +266,15 @@ st.write("---")
 # -----------------------------
 # CONTATTI
 # -----------------------------
-st.markdown("""
+st.markdown(f"""
 <div style="text-align: center;">
 <h2>📩 Contatti</h2>
 <p><strong>Email:</strong> <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></p>
-<p><strong>Telefono:</strong> +39 3804772858</p>
+<p><strong>{cell}:</strong> +39 3804772858</p>
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
