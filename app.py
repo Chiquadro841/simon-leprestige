@@ -105,7 +105,12 @@ st.markdown("""
 col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
 with col1:
-    st.empty()  # colonna sinistra vuota
+    lang = st.selectbox(
+    "🌐 Lingua",
+    options=["Italiano", "English", "Français"],
+    index=0,  # default Italiano
+    key="lang_select"
+)
 
 # converto il file PNG in base64
 with open("images/logo4.png", "rb") as f:
@@ -241,6 +246,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
