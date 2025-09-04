@@ -179,7 +179,7 @@ st.markdown(
 
 
 # Larghezza desiderata per le immagini
-image_width = 250  # puoi cambiare questo valore
+image_width = 100  # puoi cambiare questo valore
 
 # Ciclo per gruppi di 3 immagini
 for i in range(0, len(media), 3):
@@ -223,6 +223,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
