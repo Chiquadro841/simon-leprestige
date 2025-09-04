@@ -76,11 +76,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+cell = "Telefono"
+
 # --- Layout a 3 colonne: sinistra vuota, centro logo, destra contatti ---
 col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
-if lang == "Italiano":
-    cell="Telefono"
     
 with col1:
     st.empty()
@@ -100,6 +100,7 @@ with col2:
     )
 
 with col3:
+    
     st.markdown(f"""
     <div style="font-size:16px; text-align:center;">
         <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
@@ -277,6 +278,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
