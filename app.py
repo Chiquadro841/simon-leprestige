@@ -205,27 +205,32 @@ media = [
 
 media_dir = Path.cwd() / "images"
 
+# Stato iniziale indice
 if "index" not in st.session_state:
     st.session_state.index = 0
 
-col1, col2, col3 = st.columns([1,3,1])
+st.markdown("## 📸 Carosello\nScorri le immagini con le frecce.\n")
 
-with col1:
-    if st.button("⬅️ Precedente") and st.session_state.index > 0:
+# Layout: freccia sx | immagine | freccia dx
+col_left, col_center, col_right = st.columns([1, 6, 1])
+
+with col_left:
+    if st.button("⬅️", key="prev") and st.session_state.index > 0:
         st.session_state.index -= 1
 
-with col3:
-    if st.button("Successiva ➡️") and st.session_state.index < len(media)-1:
+with col_right:
+    if st.button("➡️", key="next") and st.session_state.index < len(media) - 1:
         st.session_state.index += 1
 
-# Mostra immagine attuale
-file = media[st.session_state.index]
-file_path = media_dir / file
-title = file.split(".")[0].replace("_", " ").title()
+# Mostra immagine e titolo al centro
+with col_center:
+    file = media[st.session_state.index]
+    file_path = media_dir / file
+    title = file.split(".")[0].replace("_", " ").title()
 
-with col2:
-    st.markdown(f"### {title}")
-    st.image(file_path, use_column_width=True)
+    with st.container():
+        st.markdown(f"<p style='text-align:center; font-size:18px'><b>{title}</b></p>", unsafe_allow_html=True)
+        st.image(file_path, use_column_width=True)
 
 
 st.write("---")
@@ -241,6 +246,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
