@@ -179,7 +179,7 @@ st.markdown(
 
 # Ciclo per gruppi di 3 immagini
 for i in range(0, len(media), 3):
-    cols = st.columns([1,1,1])  # Tre colonne uguali
+    cols = st.columns([4,1,4])  # Tre colonne uguali
     for j, col in enumerate(cols):
         if i + j < len(media):
             file = media[i+j]
@@ -219,6 +219,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
