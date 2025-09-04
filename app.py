@@ -100,7 +100,7 @@ with col2:
     )
 
 with col3:
-    cell= st.empty()
+    cell= ""
     st.markdown(f"""
     <div style="font-size:16px; text-align:center;">
         <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
@@ -278,6 +278,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
