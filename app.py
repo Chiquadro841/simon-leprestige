@@ -126,7 +126,7 @@ elif lang == "English":
             He has received advice from the world's most renowned and renowned magicians, such as Silvan and Dynamo,
             and has honed a unique style, characterized by elegance and impeccable stage presence."""
 
-    title2 = "# Exclusive events where you can amaze your guests:"
+    title2 = "Exclusive events where you can amaze your guests:"
     text2 ="""
         - Yacht
         - Jet
@@ -134,8 +134,7 @@ elif lang == "English":
         - Private Cerimonies
         - Location boutique
         
-        He accepts only 20 annual shows, ensuring that every single spectacle preserves an high level of quality and luxury customization.
-        """
+        He accepts only 20 annual shows, ensuring that every single spectacle preserves an high level of quality and luxury customization."""
     
     text3="## 📸 Gallery\nTake a look at some photos where he amazed  famous actors, magic masters and international entrepreneurs.\n \n"
     cell= "Phone"
@@ -143,9 +142,13 @@ elif lang == "English":
     
 elif lang == "Français":
     title1 = "Et si le véritable luxe était de voir l'impossible ?"
-    text1 = "Avec plus de 700 spectacles, Simon Le Prestige a captivé l'attention d'acteurs, chanteurs et entrepreneurs en Italie, aux États-Unis et en Europe, transformant des événements de luxe en expériences magiques au charme absolu. Il a reçu des conseils des meilleurs et plus célèbres magiciens du monde comme Silvan et Dynamo, et a affiné un style unique, fait d'élégance et d'une présence scénique impeccable."
+    text1 = """Avec plus de 700 spectacles,
+    Simon Le Prestige a captivé l'attention d'acteurs, chanteurs et entrepreneurs en Italie, aux États-Unis et en Europe,
+    transformant des événements de luxe en expériences magiques au charme absolu.
+    Il a reçu des conseils des meilleurs et plus célèbres magiciens du monde comme Silvan et Dynamo, et a affiné un style unique,
+    fait d'élégance et d'une présence scénique impeccable."""
     
-    title2 = "# Événements exclusifs où vous pouvez impressionner vos invités :"
+    title2 = "Événements exclusifs où vous pouvez impressionner vos invités :"
     text2 = """
             - Yacht
             - Jet 
@@ -289,6 +292,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
