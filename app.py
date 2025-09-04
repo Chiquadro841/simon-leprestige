@@ -15,6 +15,18 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# --- CSS per ridurre la larghezza della selectbox ---
+st.markdown("""
+<style>
+/* Riduce la larghezza della selectbox */
+div[data-baseweb="select"] {
+    max-width: 200px;  /* puoi modificare la larghezza in px */
+    margin-left: auto;  /* allinea a destra */
+    margin-right: 20px;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # -----------------------------
 # FONT Raleway e Colore
@@ -240,6 +252,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
