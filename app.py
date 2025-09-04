@@ -262,12 +262,13 @@ st.write("---")
 # -----------------------------
 st.markdown(f"""
 <div style="text-align: center;">
-<h2>📩 Contatti</h2>
+<h2>📩 {contatti}</h2>
 <p><strong>Email:</strong> <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></p>
 <p><strong>{cell}:</strong> +39 3804772858</p>
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
