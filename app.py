@@ -160,9 +160,7 @@ st.write("---")
 
 from pathlib import Path
 import streamlit as st
-"""
-# Colonne per centrare la galleria
-col_left, col_center, col_right = st.columns([1,3,1])
+
 
 # Lista media
 media = [
@@ -179,6 +177,22 @@ with col_center:
         "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     )
 
+# Loop sulle immagini
+for file in media:
+    file_path = media_dir / file
+    title = file.split(".")[0].replace("_", " ").title()
+    
+    # Centriamo titolo e immagine, e regolo la larghezza
+    st.markdown(
+        f"""
+        <div style="text-align:center; margin-bottom:20px">
+            <p style="font-size:14px">{title}</p>
+            <img src="file://{file_path}" style="max-width:300px; width:100%; height:auto; border-radius:10px;">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+"""
     # Ciclo per mostrare immagini in gruppi di 3
     for i in range(0, len(media), 3):
         cols = st.columns(3)
@@ -196,52 +210,6 @@ with col_center:
 """
 
 
-media = [
-    "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
-    "Patrick_Wave.jpg", "Orietta_Berti.jpg",
-    "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
-    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpeg"
-]
-
-import streamlit as st
-from pathlib import Path
-
-# Lista immagini
-media = [
-    "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
-    "Patrick_Wave.jpg", "Orietta_Berti.jpg",
-    "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
-    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpeg"
-]
-
-
-media_dir = Path.cwd() / "images"
-
-# Stato iniziale
-if "index" not in st.session_state:
-    st.session_state.index = 0
-
-st.markdown("## 📸 Carosello\nScorri le immagini con le frecce.\n")
-
-with st.container():
-    # Titolo dell'immagine
-    file = media[st.session_state.index]
-    title = file.split(".")[0].replace("_", " ").title()
-    st.markdown(f"<p style='text-align:center; font-size:18px; font-weight:bold'>{title}</p>", unsafe_allow_html=True)
-
-    # Immagine
-    file_path = media_dir / file
-    st.image(file_path, use_column_width=True)
-
-    # Bottoni frecce
-    col1, col2, col3 = st.columns([1,6,1])
-    with col1:
-        if st.button("⬅️ Precedente"):
-            st.session_state.index = (st.session_state.index - 1) % len(media)  # loop infinito
-    with col3:
-        if st.button("➡️ Successiva"):
-            st.session_state.index = (st.session_state.index + 1) % len(media)  # loop infinito
-
 st.write("---")
 
 # -----------------------------
@@ -255,6 +223,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
