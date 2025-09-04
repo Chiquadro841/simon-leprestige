@@ -3,16 +3,7 @@ from PIL import Image
 import base64
 from pathlib import Path
 
-# --- Selettore lingua in alto ---
-st.markdown("""
-<style>
-    .language-selector {
-        display: flex;
-        justify-content: right;
-        margin-right: 0px;
-        
-</style>
-""", unsafe_allow_html=True)
+
 
 # --- CSS per ridurre la larghezza della selectbox ---
 st.markdown("""
@@ -111,16 +102,28 @@ with col3:
     st.markdown(f"""
     <div style="font-size:16px; text-align:center;">
         <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
-        <div> [cell]: +39 3804772858</div>
+        <div>{cell} : +39 3804772858</div>
         <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
     </div>
     """, unsafe_allow_html=True)
-    
-    lang = st.selectbox("",
-    options=["Italiano", "English", "Français"],
-    index=0,  # default Italiano
-    key="lang_select"
-)
+
+
+    # --- Selettore lingua ---
+st.markdown("""
+    <style>
+        .language-selector {
+            display: flex;
+            justify-content: right;
+            margin-right: 0px;
+            
+    </style>
+    """, unsafe_allow_html=True)
+
+        lang = st.selectbox("",
+        options=["Italiano", "English", "Français"],
+        index=0,  # default Italiano
+        key="lang_select"
+    )
     # --- Testi multilingua ---
 if lang == "Italiano":
     title1 = "E se il vero lusso fosse assistere all'impossibile?"
@@ -269,6 +272,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
