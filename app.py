@@ -106,14 +106,14 @@ if lang == "Italiano":
 
     title2 = "# Eventi esclusivi dove puoi stupire i tuoi ospiti:"
     text2 ="""
-- Yacht
-- Jet
-- Ville
-- Cerimonie riservate
-- Location boutique
-
-Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
-"""
+            - Yacht
+            - Jet
+            - Ville
+            - Cerimonie riservate
+            - Location boutique
+            
+            Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
+            """
     
     text3="## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     cell= "Telefono"
@@ -128,14 +128,14 @@ elif lang == "English":
 
     title2 = "# Exclusive events where you can amaze your guests:"
     text2 ="""
-- Yacht
-- Jet
-- Villas
-- Private Cerimonies
-- Location boutique
-
-He accepts only 20 annual shows, ensuring that every single spectacle preserves an high level of quality and luxury customization.
-"""
+        - Yacht
+        - Jet
+        - Villas
+        - Private Cerimonies
+        - Location boutique
+        
+        He accepts only 20 annual shows, ensuring that every single spectacle preserves an high level of quality and luxury customization.
+        """
     
     text3="## 📸 Gallery\nTake a look at some photos where he amazed  famous actors, magic masters and international entrepreneurs.\n \n"
     cell= "Phone"
@@ -147,14 +147,14 @@ elif lang == "Français":
     
     title2 = "# Événements exclusifs où vous pouvez impressionner vos invités :"
     text2 = """
-    - Yacht
-    - Jet 
-    - Villas 
-    - Cérémonies privées 
-    - Lieux boutique. 
-    
-    Il n'accepte que 20 spectacles par an, garantissant ainsi que chaque spectacle maintienne un niveau de qualité et de personnalisation de luxe élevé."
-    
+            - Yacht
+            - Jet 
+            - Villas 
+            - Cérémonies privées 
+            - Lieux boutique.
+            
+            Il n'accepte que 20 spectacles par an, garantissant ainsi que chaque spectacle maintienne un niveau de qualité et de personnalisation de luxe élevé."
+            """
     text3 = "## 📸 Galerie\nVoici quelques photos où il a impressionné des acteurs célèbres, des maîtres de la magie et des entrepreneurs internationaux."
     
     cell = "Téléphone"
@@ -288,6 +288,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
