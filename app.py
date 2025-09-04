@@ -15,13 +15,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-lang = st.selectbox(
-    "🌐 Lingua",
-    options=["Italiano", "English", "Français"],
-    index=0,  # default Italiano
-    key="lang_select"
-)
-
 # --- Testi multilingua ---
 if lang == "Italiano":
     title1 = "E se il vero lusso fosse assistere all'impossibile?"
@@ -246,6 +239,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
