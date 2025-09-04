@@ -8,7 +8,7 @@ st.markdown("""
 <style>
     .language-selector {
         display: flex;
-        justify-content: flex-end;
+        justify-content: left;
         margin-top: -50px;  /* regola in base al layout */
         margin-bottom: 20px;
     }
@@ -252,6 +252,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
