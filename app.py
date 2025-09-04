@@ -99,10 +99,10 @@ with col1:
     # --- Testi multilingua ---
 if lang == "Italiano":
     title1 = "E se il vero lusso fosse assistere all'impossibile?"
-    text1 = "Con oltre 700 spettacoli, Simon Le Prestige ha catturato l’attenzione di attori, cantanti e imprenditori\\\
-in Italia, Usa ed Europa,trasformando eventi di lusso in esperienze magiche dal fascino assoluto.\\\
-Ha avuto consigli dai maghi più eccellenti e famosi del mondo come Silvan e Dynamo ha affinato uno stile unico,\\\
-fatto di eleganza e impeccabile presenza scenica."
+    text1 = """Con oltre 700 spettacoli, Simon Le Prestige ha catturato l’attenzione di attori, cantanti e imprenditori
+                in Italia, Usa ed Europa,trasformando eventi di lusso in esperienze magiche dal fascino assoluto.
+                Ha avuto consigli dai maghi più eccellenti e famosi del mondo come Silvan e Dynamo ha affinato uno stile unico,
+                fatto di eleganza e impeccabile presenza scenica."""
 
     title2 = "# Eventi esclusivi dove puoi stupire i tuoi ospiti:"
     text2 ="""
@@ -122,7 +122,6 @@ elif lang == "English":
     title1 = "What if true luxury was witnessing the impossible?"
     text1 = """With over 700 shows, Simon Le Prestige has captured the attention of actors,
             singers, and entrepreneurs in Italy, the US, and Europe, transforming luxury events into magical experiences of absolute charm.
-
             He has received advice from the world's most renowned and renowned magicians, such as Silvan and Dynamo,
             and has honed a unique style, characterized by elegance and impeccable stage presence."""
 
@@ -274,6 +273,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
