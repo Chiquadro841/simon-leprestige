@@ -80,7 +80,7 @@ st.set_page_config(page_title="Landing Demo", layout="wide")
 st.markdown("""
     <style>
         .block-container {
-            padding-top: -3rem;  /* abbassa tutto verso l'alto */
+            padding-top: 5rem;  /* abbassa tutto verso l'alto */
             padding-right: 1 rem
         }
     </style>
@@ -267,6 +267,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
