@@ -177,21 +177,17 @@ st.markdown(
         "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     )
 
-# Loop sulle immagini
-for file in media:
-    file_path = media_dir / file
-    title = file.split(".")[0].replace("_", " ").title()
-    
-    # Centriamo titolo e immagine, e regolo la larghezza
-    st.markdown(
-        f"""
-        <div style="text-align:center; margin-bottom:20px">
-            <p style="font-size:14px">{title}</p>
-            <img src="file://{file_path}" style="max-width:300px; width:100%; height:auto; border-radius:10px;">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+# Ciclo per gruppi di 3 immagini
+for i in range(0, len(media), 3):
+    cols = st.columns([1,1,1])  # Tre colonne uguali
+    for j, col in enumerate(cols):
+        if i + j < len(media):
+            file = media[i+j]
+            file_path = media_dir / file
+            title = file.split(".")[0].replace("_", " ").title()
+            with col:
+                st.markdown(f"<p style='text-align:center; font-size:12px'>{title}</p>", unsafe_allow_html=True)
+                st.image(file_path, use_column_width=True)  # Centra automaticamente e scala
 """
     # Ciclo per mostrare immagini in gruppi di 3
     for i in range(0, len(media), 3):
@@ -223,6 +219,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
