@@ -91,7 +91,7 @@ col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
 with col1:
     lang = st.selectbox(
-    "🌐 Lingua",
+    "🌐",
     options=["Italiano", "English", "Français"],
     index=0,  # default Italiano
     key="lang_select"
@@ -104,8 +104,16 @@ in Italia, Usa ed Europa,trasformando eventi di lusso in esperienze magiche dal 
 Ha avuto consigli dai maghi più eccellenti e famosi del mondo come Silvan e Dynamo ha affinato uno stile unico,\\\
 fatto di eleganza e impeccabile presenza scenica."
 
-    title2 = ""
-    text2 =""
+    title2 = "# Eventi esclusivi dove puoi stupire i tuoi ospiti:"
+    text2 ="""
+- Yacht
+- Jet
+- Ville
+- Cerimonie riservate
+- Location boutique
+
+Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
+"""
     
 elif lang == "English":
     header_title = "What if true luxury was witnessing the impossible?"
@@ -180,16 +188,9 @@ st.write("---")
 col3, col4 = st.columns([2, 1])
 
 with col3:
-    st.markdown("""
-# Eventi esclusivi dove puoi stupire i tuoi ospiti:
-- Yacht
-- Jet
-- Ville
-- Cerimonie riservate
-- Location boutique
-
-Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
-""")
+    st.markdown(f"""
+# {title2}
+{text2}""")
 
 with col4:
     st.markdown(f"""
@@ -252,6 +253,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
