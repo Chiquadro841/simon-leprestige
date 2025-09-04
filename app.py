@@ -153,7 +153,8 @@ elif lang == "Français":
             - Cérémonies privées 
             - Lieux boutique.
             
-            Il n'accepte que 20 spectacles par an, garantissant ainsi que chaque spectacle maintienne un niveau de qualité et de personnalisation de luxe élevé."
+            Il n'accepte que 20 spectacles par an,
+            garantissant ainsi que chaque spectacle maintienne un niveau de qualité et de personnalisation de luxe élevé.
             """
     text3 = "## 📸 Galerie\nVoici quelques photos où il a impressionné des acteurs célèbres, des maîtres de la magie et des entrepreneurs internationaux."
     
@@ -288,6 +289,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
