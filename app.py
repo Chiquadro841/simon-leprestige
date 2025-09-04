@@ -203,35 +203,84 @@ media = [
     "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpeg"
 ]
 
+import streamlit as st
+from pathlib import Path
+
+# Lista immagini
+media = [
+    "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
+    "Patrick_Wave.jpg", "Orietta_Berti.jpg",
+    "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
+    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpeg"
+]
+
 media_dir = Path.cwd() / "images"
 
-# Stato iniziale indice
 if "index" not in st.session_state:
     st.session_state.index = 0
 
-st.markdown("## 📸 Carosello\nScorri le immagini con le frecce.\n")
+st.markdown("## 📸 Carosello\nScorri con le frecce ⬅️ ➡️\n")
 
-# Layout: freccia sx | immagine | freccia dx
-col_left, col_center, col_right = st.columns([1, 6, 1])
+with st.container():
+    # CSS per centrare immagine e posizionare frecce
+    st.markdown(
+        """
+        <style>
+        .carousel-container {
+            position: relative;
+            text-align: center;
+        }
+        .carousel-image {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .arrow-left { left: 10px; }
+        .arrow-right { right: 10px; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
-with col_left:
-    if st.button("⬅️", key="prev") and st.session_state.index > 0:
-        st.session_state.index -= 1
-
-with col_right:
-    if st.button("➡️", key="next") and st.session_state.index < len(media) - 1:
-        st.session_state.index += 1
-
-# Mostra immagine e titolo al centro
-with col_center:
+    # Mostra immagine attuale
     file = media[st.session_state.index]
     file_path = media_dir / file
     title = file.split(".")[0].replace("_", " ").title()
 
-    with st.container():
-        st.markdown(f"<p style='text-align:center; font-size:18px'><b>{title}</b></p>", unsafe_allow_html=True)
-        st.image(file_path, use_column_width=True)
+    # HTML con immagine e frecce
+    st.markdown(
+        f"""
+        <div class="carousel-container">
+            <p style="font-size:18px; font-weight:bold">{title}</p>
+            <img src="images/{file}" class="carousel-image">
+            <form action="" method="post">
+                <button name="prev" class="arrow-btn arrow-left">⬅️</button>
+                <button name="next" class="arrow-btn arrow-right">➡️</button>
+            </form>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
+# Gestione logica frecce (con query params / post workaround)
+if st.session_state.get("prev_clicked", False):
+    st.session_state.index = (st.session_state.index - 1) % len(media)
+    st.session_state.prev_clicked = False
+
+if st.session_state.get("next_clicked", False):
+    st.session_state.index = (st.session_state.index + 1) % len(media)
+    st.session_state.next_clicked = False
 
 st.write("---")
 
@@ -246,6 +295,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
