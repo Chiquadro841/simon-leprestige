@@ -176,25 +176,6 @@ media_dir = Path.cwd() / "images"
 st.markdown(
         "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     )
-
-
-# Numero massimo di immagini per riga
-images_per_row = 5
-image_width = 100  # larghezza piccola
-
-# Ciclo sulle immagini in blocchi
-for i in range(0, len(media), images_per_row):
-    # Prendo il gruppo corrente
-    group = media[i:i+images_per_row]
-    # Creo tante colonne quante immagini ci sono nel gruppo
-    cols = st.columns(len(group))
-    for col, file in zip(cols, group):
-        file_path = media_dir / file
-       # title = file.split(".")[0].replace("_", " ").title()
-        with col:
-            #st.markdown(f"<p style='text-align:center; font-size:8px'>{title}</p>", unsafe_allow_html=True)
-            st.image(file_path, width=image_width)
-"""
     # Ciclo per mostrare immagini in gruppi di 3
     for i in range(0, len(media), 3):
         cols = st.columns(3)
@@ -209,7 +190,7 @@ for i in range(0, len(media), images_per_row):
 
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path)
-"""
+
 
 
 st.write("---")
@@ -225,6 +206,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
