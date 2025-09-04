@@ -104,7 +104,7 @@ if lang == "Italiano":
                 Ha avuto consigli dai maghi più eccellenti e famosi del mondo come Silvan e Dynamo ha affinato uno stile unico,
                 fatto di eleganza e impeccabile presenza scenica."""
 
-    title2 = "# Eventi esclusivi dove puoi stupire i tuoi ospiti:"
+    title2 = "Eventi esclusivi dove puoi stupire i tuoi ospiti:"
     text2 ="- Yacht\n- Jet\n- Ville\n- Cerimonie riservate\n- Location boutique\n\nAccetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato."
     
     text3="## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
@@ -119,14 +119,7 @@ elif lang == "English":
             and has honed a unique style, characterized by elegance and impeccable stage presence."""
 
     title2 = "Exclusive events where you can amaze your guests:"
-    text2 ="""
-        - Yacht
-        - Jet
-        - Villas
-        - Private Cerimonies
-        - Location boutique
-        
-        He accepts only 20 annual shows, ensuring that every single spectacle preserves an high level of quality and luxury customization."""
+    text2 ="- Yacht\n- Jet\n- Villas\n- Private Cerimonies\n- Location boutique\n\nHe accepts only 20 annual shows, ensuring that every single spectacle preserves an high level of quality and luxury customization."""
     
     text3="## 📸 Gallery\nTake a look at some photos where he amazed  famous actors, magic masters and international entrepreneurs.\n \n"
     cell= "Phone"
@@ -141,16 +134,7 @@ elif lang == "Français":
     fait d'élégance et d'une présence scénique impeccable."""
     
     title2 = "Événements exclusifs où vous pouvez impressionner vos invités :"
-    text2 = """
-            - Yacht
-            - Jet 
-            - Villas 
-            - Cérémonies privées 
-            - Lieux boutique.
-            
-            Il n'accepte que 20 spectacles par an,
-            garantissant ainsi que chaque spectacle maintienne un niveau de qualité et de personnalisation de luxe élevé.
-            """
+    text2 = "- Yacht\n- Jet\n- Villas\n- Cérémonies privées\n- Lieux boutique.\n\nIl n'accepte que 20 spectacles par an, garantissant ainsi que chaque spectacle maintienne un niveau de qualité et de personnalisation de luxe élevé."
     text3 = "## 📸 Galerie\nVoici quelques photos où il a impressionné des acteurs célèbres, des maîtres de la magie et des entrepreneurs internationaux."
     
     cell = "Téléphone"
@@ -284,6 +268,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
