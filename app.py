@@ -7,10 +7,9 @@ from pathlib import Path
 st.markdown("""
 <style>
     .language-selector {
-        display: flex;
+        
         justify-content: left;
-        margin-top: 0px;  /* regola in base al layout */
-        margin-bottom: 20px;
+        margin-top: 0px;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -267,6 +266,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
