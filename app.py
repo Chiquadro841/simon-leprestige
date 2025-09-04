@@ -117,6 +117,7 @@ Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mant
     
     text3="## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     cell= "Telefono"
+    contatti="Contatti"
 
 elif lang == "English":
     title1 = "What if true luxury was witnessing the impossible?"
@@ -138,13 +139,27 @@ He accepts only 20 annual shows, ensuring that every single spectacle preserves 
     
     text3="## 📸 Gallery\nTake a look at some photos where he amazed  famous actors, magic masters and international entrepreneurs.\n \n"
     cell= "Phone"
+    contatti="Contacts"
+    
 elif lang == "Français":
-    header_title = "Et si le véritable luxe était de voir l'impossible?"
-    subheader_text = "Simon Le Prestige a captivé l'attention des acteurs, chanteurs et entrepreneurs..."
-
-
-
-
+    title1 = "Et si le véritable luxe était de voir l'impossible ?"
+    text1 = "Avec plus de 700 spectacles, Simon Le Prestige a captivé l'attention d'acteurs, chanteurs et entrepreneurs en Italie, aux États-Unis et en Europe, transformant des événements de luxe en expériences magiques au charme absolu. Il a reçu des conseils des meilleurs et plus célèbres magiciens du monde comme Silvan et Dynamo, et a affiné un style unique, fait d'élégance et d'une présence scénique impeccable."
+    
+    title2 = "# Événements exclusifs où vous pouvez impressionner vos invités :"
+    text2 = """
+    - Yacht
+    - Jet 
+    - Villas 
+    - Cérémonies privées 
+    - Lieux boutique. 
+    
+    Il n'accepte que 20 spectacles par an, garantissant ainsi que chaque spectacle maintienne un niveau de qualité et de personnalisation de luxe élevé."
+    
+    text3 = "## 📸 Galerie\nVoici quelques photos où il a impressionné des acteurs célèbres, des maîtres de la magie et des entrepreneurs internationaux."
+    
+    cell = "Téléphone"
+    contatti = "Contacts"
+    
 
 # converto il file PNG in base64
 with open("images/logo4.png", "rb") as f:
@@ -273,6 +288,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
