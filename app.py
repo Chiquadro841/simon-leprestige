@@ -21,8 +21,8 @@ st.markdown("""
 /* Riduce la larghezza della selectbox */
 div[data-baseweb="select"] {
     max-width: 200px;  /* puoi modificare la larghezza in px */
-    margin-left: auto;  /* allinea a destra */
-    margin-right: 20px;
+    margin-right: auto;  /* allinea a destra */
+    margin-left: 20px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -252,6 +252,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
