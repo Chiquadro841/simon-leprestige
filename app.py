@@ -3,6 +3,16 @@ from PIL import Image
 import base64
 from pathlib import Path
 
+# --- Selettore lingua in alto ---
+st.markdown("""
+<style>
+    .language-selector {
+        display: flex;
+        justify-content: center;
+        
+</style>
+""", unsafe_allow_html=True)
+
 # --- CSS per ridurre la larghezza della selectbox ---
 st.markdown("""
 <style>
@@ -258,6 +268,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
