@@ -107,21 +107,20 @@ with col3:
     </div>
     """, unsafe_allow_html=True)
 
-    # --- CSS per centrare e ridurre larghezza selectbox ---
+     # --- Selettore lingua ---
     st.markdown("""
         <style>
             div[data-baseweb="select"] {
                 display: inline-block;     /* inline per centrarlo */
-                max-width: 180px;          /* larghezza ridotta */
+                max-width: 120px;          /* larghezza ridotta */
             }
             .stSelectbox {
                 text-align: center;        /* centra l'etichetta */
             }
         </style>
     """, unsafe_allow_html=True)
-    # --- Selettore lingua ---
-    # --- Selettore lingua centrato ---
-    st.markdown("<div style='text-align:center; margin-top:10px;'>🌐</div>", unsafe_allow_html=True)
+   
+
     lang = st.selectbox(
         "",
         options=["Italiano", "English", "Français"],
@@ -277,6 +276,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
