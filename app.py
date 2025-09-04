@@ -3,6 +3,45 @@ from PIL import Image
 import base64
 from pathlib import Path
 
+# --- Selettore lingua in alto ---
+st.markdown("""
+<style>
+    .language-selector {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -50px;  /* regola in base al layout */
+        margin-bottom: 20px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+lang = st.selectbox(
+    "🌐 Lingua",
+    options=["Italiano", "English", "Français"],
+    index=0,  # default Italiano
+    key="lang_select"
+)
+
+# --- Testi multilingua ---
+if lang == "Italiano":
+    title1 = "E se il vero lusso fosse assistere all'impossibile?"
+    text1 = "Con oltre 700 spettacoli, Simon Le Prestige ha catturato l’attenzione di attori, cantanti e imprenditori\\\
+in Italia, Usa ed Europa,trasformando eventi di lusso in esperienze magiche dal fascino assoluto.\\\
+Ha avuto consigli dai maghi più eccellenti e famosi del mondo come Silvan e Dynamo ha affinato uno stile unico,\\\
+fatto di eleganza e impeccabile presenza scenica."
+
+    title2 = ""
+    text2 =""
+    
+elif lang == "English":
+    header_title = "What if true luxury was witnessing the impossible?"
+    subheader_text = "Simon Le Prestige has captured the attention of actors, singers, and entrepreneurs..."
+elif lang == "Français":
+    header_title = "Et si le véritable luxe était de voir l'impossible?"
+    subheader_text = "Simon Le Prestige a captivé l'attention des acteurs, chanteurs et entrepreneurs..."
+
+
+
 
 # -----------------------------
 # FONT Raleway e Colore
@@ -115,15 +154,11 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""
-# E se il vero lusso fosse assistere all'impossibile?
+    st.markdown(f"""
+# {title1}
 
 ## Simon Le Prestige
-Con oltre 700 spettacoli, Simon Le Prestige ha catturato l’attenzione di attori, cantanti e imprenditori\\
-in Italia, Usa ed Europa,trasformando eventi di lusso in esperienze magiche dal fascino
-assoluto.\\
-Ha avuto consigli dai maghi più eccellenti e famosi del mondo come Silvan e Dynamo ha affinato uno stile unico,\\
-fatto di eleganza e impeccabile presenza scenica.
+{text1}
 """)
 
 st.write("---")
@@ -206,6 +241,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
