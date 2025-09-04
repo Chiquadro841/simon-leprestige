@@ -100,7 +100,7 @@ with col3:
     st.markdown(f"""
     <div style="font-size:16px; text-align:center;">
         <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
-        <div> {cell}: +39 3804772858</div>
+        <div> [cell]: +39 3804772858</div>
         <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
     </div>
     """, unsafe_allow_html=True)
@@ -258,6 +258,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
