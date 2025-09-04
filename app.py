@@ -90,7 +90,7 @@ st.markdown("""
 col1, col2, col3 = st.columns([1, 1, 1])  # tutte larghe uguali
 
 with col1:
-    lang = st.selectbox(
+    lang = st.selectbox("",
     options=["Italiano", "English", "Français"],
     index=0,  # default Italiano
     key="lang_select"
@@ -267,6 +267,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
