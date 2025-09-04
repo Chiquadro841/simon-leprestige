@@ -214,73 +214,33 @@ media = [
     "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpeg"
 ]
 
+
 media_dir = Path.cwd() / "images"
 
+# Stato iniziale
 if "index" not in st.session_state:
     st.session_state.index = 0
 
-st.markdown("## 📸 Carosello\nScorri con le frecce ⬅️ ➡️\n")
+st.markdown("## 📸 Carosello\nScorri le immagini con le frecce.\n")
 
 with st.container():
-    # CSS per centrare immagine e posizionare frecce
-    st.markdown(
-        """
-        <style>
-        .carousel-container {
-            position: relative;
-            text-align: center;
-        }
-        .carousel-image {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        .arrow-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.4);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .arrow-left { left: 10px; }
-        .arrow-right { right: 10px; }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    # Mostra immagine attuale
+    # Titolo dell'immagine
     file = media[st.session_state.index]
-    file_path = media_dir / file
     title = file.split(".")[0].replace("_", " ").title()
+    st.markdown(f"<p style='text-align:center; font-size:18px; font-weight:bold'>{title}</p>", unsafe_allow_html=True)
 
-    # HTML con immagine e frecce
-    st.markdown(
-        f"""
-        <div class="carousel-container">
-            <p style="font-size:18px; font-weight:bold">{title}</p>
-            <img src="images/{file}" class="carousel-image">
-            <form action="" method="post">
-                <button name="prev" class="arrow-btn arrow-left">⬅️</button>
-                <button name="next" class="arrow-btn arrow-right">➡️</button>
-            </form>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    # Immagine
+    file_path = media_dir / file
+    st.image(file_path, use_column_width=True)
 
-# Gestione logica frecce (con query params / post workaround)
-if st.session_state.get("prev_clicked", False):
-    st.session_state.index = (st.session_state.index - 1) % len(media)
-    st.session_state.prev_clicked = False
-
-if st.session_state.get("next_clicked", False):
-    st.session_state.index = (st.session_state.index + 1) % len(media)
-    st.session_state.next_clicked = False
+    # Bottoni frecce
+    col1, col2, col3 = st.columns([1,6,1])
+    with col1:
+        if st.button("⬅️ Precedente"):
+            st.session_state.index = (st.session_state.index - 1) % len(media)  # loop infinito
+    with col3:
+        if st.button("➡️ Successiva"):
+            st.session_state.index = (st.session_state.index + 1) % len(media)  # loop infinito
 
 st.write("---")
 
@@ -295,6 +255,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
