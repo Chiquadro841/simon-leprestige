@@ -101,23 +101,23 @@ with col2:
 with col3:
     st.markdown(f"""
     <div style="font-size:16px; text-align:center;">
-        <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
-        <div>{cell} : +39 3804772858</div>
-        <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
+    <div>Email: <a href="mailto:zmorossi@gmail.com">zmorossi@gmail.com</a></div>
+    <div>{cell} : +39 3804772858</div>
+    <div>Instagram: <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></div>
     </div>
     """, unsafe_allow_html=True)
 
 
     # --- Selettore lingua ---
-st.markdown("""
-    <style>
-        .language-selector {
-            display: flex;
-            justify-content: right;
-            margin-right: 0px;
-            
-    </style>
-    """, unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+            .language-selector {
+                display: flex;
+                justify-content: right;
+                margin-right: 0px;
+                
+        </style>
+        """, unsafe_allow_html=True)
 
         lang = st.selectbox("",
         options=["Italiano", "English", "Français"],
@@ -272,6 +272,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
