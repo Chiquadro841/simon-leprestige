@@ -177,7 +177,7 @@ st.markdown(
         "## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     )
     # Ciclo per mostrare immagini in gruppi di 3
-    for i in range(0, len(media), 3):
+for i in range(0, len(media), 3):
         cols = st.columns(3)
         for j, col in enumerate(cols):
             if i+j < len(media):
@@ -206,6 +206,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
