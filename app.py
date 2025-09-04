@@ -106,14 +106,14 @@ if lang == "Italiano":
 
     title2 = "# Eventi esclusivi dove puoi stupire i tuoi ospiti:"
     text2 ="""
-            - Yacht
-            - Jet
-            - Ville
-            - Cerimonie riservate
-            - Location boutique
-            
-            Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
-            """
+    - Yacht
+    - Jet
+    - Ville
+    - Cerimonie riservate
+    - Location boutique
+    
+    Accetta solo 20 spettacoli all’anno, garantendo così che ogni spettacolo mantenga un livello di qualità e personalizzazione di lusso elevato.
+    """
     
     text3="## 📸 Galleria\nEcco alcune foto dove ha stupito famosi attori, maestri della magia e imprenditori internazionali.\n \n"
     cell= "Telefono"
@@ -288,6 +288,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
