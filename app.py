@@ -191,7 +191,7 @@ for i in range(0, len(media), 3):
             title = file.split(".")[0].replace("_", " ").title()
             with col:
                 st.markdown(f"<p style='text-align:center; font-size:4px'>{title}</p>", unsafe_allow_html=True)
-                st.image(file_path, width=image_width)
+                st.image(file_path, width=200px)
 """
     # Ciclo per mostrare immagini in gruppi di 3
     for i in range(0, len(media), 3):
@@ -223,6 +223,7 @@ st.markdown("""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
