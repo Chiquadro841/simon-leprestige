@@ -280,7 +280,7 @@ def avanti():
 st.markdown(
         f"{text3}\n"
     )
-c1, c2, c3 = st.columns([1,1,1])
+c1, c2, c3 = st.columns([1,2,1])
 
 # Prendi solo il nome file senza percorso e senza estensione
 nome_file = immagini_path[st.session_state.index].name  # es. "Yamil_Raidan.jpg"
@@ -313,6 +313,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
