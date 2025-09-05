@@ -245,7 +245,7 @@ from io import BytesIO
 immagini = [
     "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
     "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
-    "images/Elio_e_le_storie_tese.jpg", "images/Hollywood.jpg",
+    "images/Josè_Bobadilla.jpg", "images/Hollywood.jpg",
     "images/Dynamo.jpg", "images/Jeff_Onorato.jpg",
     "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.jpeg"
 ]
@@ -278,12 +278,12 @@ def avanti():
     st.session_state.index = (st.session_state.index + 1) % len(immagini_path)
 
 
-c1, c2, c3 = st.columns([0.5,2,1])
+c1, c2, c3 = st.columns([1,1,1])
 
 with c2:
     # Mostra immagine centrata usando st.image
     img = load_and_crop(immagini_path[st.session_state.index])
-    st.image(img, width=300, caption=f"Foto {st.session_state.index+1} di {len(immagini_path)}")
+    st.image(img, width=400, caption=f"Foto {st.session_state.index+1} di {len(immagini_path)}")
     st.button("▶", on_click=avanti)
 
 
@@ -341,6 +341,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
