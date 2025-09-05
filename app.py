@@ -292,10 +292,13 @@ with c2:
     img = load_and_crop(immagini_path[st.session_state.index])
     st.image(img, width=400, caption=f"{nome_foto}    {st.session_state.index+1} di {len(immagini_path)}")
     
-    # Centra il pulsante usando colonne interne
-    col_left, col_center, col_right = st.columns([4,1,1])
-    with col_center:
-        st.button("▶", on_click=avanti)
+    # Pulsante centrato con markdown
+    st.markdown(
+        "<div style='text-align:center'>"
+        "<button onclick=''>▶</button>"
+        "</div>",
+        unsafe_allow_html=True
+    )
 
 
 
@@ -313,6 +316,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
