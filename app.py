@@ -238,7 +238,7 @@ from pathlib import Path
 import streamlit as st
 
 
-media = [
+immagini = [
      "images/Josè_Bobadilla.jpg", "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
     "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
     "images/Elio_e_le_storie_tese.jpg", "images/Hollywood.jpg", "images/Dynamo.jpg",
@@ -335,6 +335,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
