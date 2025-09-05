@@ -241,21 +241,24 @@ import requests
 from io import BytesIO
 
 
-immagini_url = [
-      "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
+# Lista immagini locali
+immagini = [
+    "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
     "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
-    "images/Elio_e_le_storie_tese.jpg", "images/Hollywood.jpg", "images/Dynamo.jpg",
-    "images/Jeff_Onorato.jpg", "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.jpeg"
+    "images/Elio_e_le_storie_tese.jpg", "images/Hollywood.jpg",
+    "images/Dynamo.jpg", "images/Jeff_Onorato.jpg",
+    "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.jpeg"
 ]
 
+# Percorsi completi
+immagini_path = [Path.cwd()/img for img in immagini]
 
 # Dimensione target
 target_width = 400
 target_height = 250
 
-def load_and_crop(url):
-    response = requests.get(url)
-    img = Image.open(BytesIO(response.content))
+def load_and_crop(path):
+    img = Image.open(path)
     # Ridimensiona mantenendo proporzioni
     img.thumbnail((max(img.size), max(img.size)))
     # Ritaglio centrale
@@ -272,17 +275,17 @@ if "index" not in st.session_state:
     st.session_state.index = 0
 
 def avanti():
-    st.session_state.index = (st.session_state.index + 1) % len(immagini_url)
+    st.session_state.index = (st.session_state.index + 1) % len(immagini_path)
 
 def indietro():
-    st.session_state.index = (st.session_state.index - 1) % len(immagini_url)
+    st.session_state.index = (st.session_state.index - 1) % len(immagini_path)
 
 # Mostra immagine
-img = load_and_crop(immagini_url[st.session_state.index])
+img = load_and_crop(immagini_path[st.session_state.index])
 st.image(img, width=target_width,
-         caption=f"Foto {st.session_state.index+1} di {len(immagini_url)}")
+         caption=f"Foto {st.session_state.index+1} di {len(immagini_path)}")
 
-# Pulsanti centrati
+# Pulsanti centrati sotto
 c1, c2, c3 = st.columns([1,1,1])
 with c2:
     col_left, col_right = st.columns(2)
@@ -345,6 +348,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
