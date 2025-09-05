@@ -240,14 +240,11 @@ import streamlit as st
 
 # Lista media
 immagini = [
-     "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
-    "Patrick_Wave.jpg", "Orietta_Berti.jpg",
-    "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
-    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpeg"
+     "images/Josè_Bobadilla.jpg", "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
+    "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
+    "images/Elio_e_le_storie_tese.jpg", "images/Hollywood.jpg", "images/Dynamo.jpg",
+    "images/Jeff_Onorato.jpg", "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.jpeg"
 ]
-
-media_dir = Path.cwd() / "images"
-
 
 st.markdown(
         f"{text3}"
@@ -273,7 +270,7 @@ def indietro():
 
 
 with col1:
-    st.markdown("<p style='color:transparent;'>riempimento fittizio per scendere i pulsanti</p><br>", unsafe_allow_html=True)
+    st.markdown("<p style='color:transparent;'>riempimento</p><br>", unsafe_allow_html=True)
     st.button("◀", on_click=indietro)
     
 with col2:
@@ -283,7 +280,7 @@ with col2:
         caption=f"Foto {st.session_state.index+1} di {len(immagini)}"
     )
 with col3:
-    st.markdown("<p style='color:transparent;'>riempimento fittizio per scendere i pulsanti</p><br>", unsafe_allow_html=True)
+    st.markdown("<p style='color:transparent;'>riempimento</p><br>", unsafe_allow_html=True)
     st.button("▶", on_click=avanti)
 
 
@@ -323,6 +320,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
