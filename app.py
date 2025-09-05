@@ -277,22 +277,15 @@ if "index" not in st.session_state:
 def avanti():
     st.session_state.index = (st.session_state.index + 1) % len(immagini_path)
 
-def indietro():
-    st.session_state.index = (st.session_state.index - 1) % len(immagini_path)
 
-# Mostra immagine centrata usando st.image
-img = load_and_crop(immagini_path[st.session_state.index])
-st.image(img, width=target_width, caption=f"Foto {st.session_state.index+1} di {len(immagini_path)}")
-
-
-# Pulsanti centrati sotto
 c1, c2, c3 = st.columns([1,1,1])
+
 with c2:
-    col_left, col_right = st.columns(2)
-    with col_left:
-        st.button("◀", on_click=indietro)
-    with col_right:
-        st.button("▶", on_click=avanti)
+    # Mostra immagine centrata usando st.image
+    img = load_and_crop(immagini_path[st.session_state.index])
+    st.image(img, width=target_width, caption=f"Foto {st.session_state.index+1} di {len(immagini_path)}")
+    st.button("▶", on_click=avanti
+
 
 
 
@@ -348,6 +341,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
