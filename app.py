@@ -254,8 +254,8 @@ immagini = [
 immagini_path = [Path.cwd()/img for img in immagini]
 
 # Dimensione target
-target_width = 400
-target_height = 250
+target_width = 1000
+target_height = 1000
 
 def load_and_crop(path):
     img = Image.open(path)
@@ -348,6 +348,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
