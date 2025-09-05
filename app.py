@@ -264,22 +264,20 @@ def indietro():
 st.image(immagini[st.session_state.index], width=400,
          caption=f"Foto {st.session_state.index+1} di {len(immagini)}")
 
-# Pulsanti centrati sotto
-st.markdown(
-    """
-    <div style='text-align:center;'>
-        <button onclick='window.location.reload();'>◀</button>
-        <button onclick='window.location.reload();'>▶</button>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
-# Pulsanti Streamlit centrati
+
+# Pulsanti centrati sotto l'immagine
 c1, c2, c3 = st.columns([1,1,1])
+with c1:
+    pass
 with c2:
-    st.button("◀", on_click=indietro)
-    st.button("▶", on_click=avanti)
+    col_left, col_right = st.columns(2)
+    with col_left:
+        st.button("◀", on_click=indietro)
+    with col_right:
+        st.button("▶", on_click=avanti)
+with c3:
+    pass
 
 
 
@@ -335,6 +333,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
