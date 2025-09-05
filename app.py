@@ -291,7 +291,7 @@ with c2:
     # Mostra immagine centrata usando st.image
     img = load_and_crop(immagini_path[st.session_state.index])
     st.image(img, width=400, caption=f"{nome_foto}    {st.session_state.index+1} di {len(immagini_path)}")
-    st.markdown("<p style='color:transparent;'>riempimento di prova per centrare bottone</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:transparent;'>riempimento</p>", unsafe_allow_html=True)
     st.button("▶", on_click=avanti)
 
 
@@ -310,6 +310,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
