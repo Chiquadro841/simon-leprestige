@@ -247,7 +247,7 @@ immagini = [
     "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
     "images/Josè_Bobadilla.jpg", "images/Hollywood.jpg",
     "images/Dynamo.jpg", "images/Jeff_Onorato.jpg",
-    "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.jpg"
+    "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.JPG"
 ]
 
 # Percorsi completi
@@ -346,6 +346,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
