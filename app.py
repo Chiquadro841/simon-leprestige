@@ -278,7 +278,7 @@ def avanti():
     st.session_state.index = (st.session_state.index + 1) % len(immagini_path)
 
 st.markdown(
-        f"{text3}"
+        f"{text3}\n"
     )
 c1, c2, c3 = st.columns([1,1,1])
 
@@ -296,45 +296,6 @@ with c2:
 
 
 
-
-
-
-
-
-
-"""
-# Lista media
-media = [
-     "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
-    "Patrick_Wave.jpg", "Orietta_Berti.jpg",
-    "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
-    "Jeff_Onorato.jpg", "Scamarcio_e_Porcaroli.jpg", "Rafael_Ayala.jpeg"
-]
-
-media_dir =  Path.cwd()/ "images"
-
-st.markdown(
-        f"{text3}"
-    )
-
-
-
-# Ciclo per mostrare immagini in gruppi di 3
-for i in range(0, len(media), 3):
-        cols = st.columns(3)
-        for j, col in enumerate(cols):
-            if i+j < len(media):
-                with col:
-                    file = media[i+j]
-                    file_path = media_dir / file
-                    # Titolo piccolo sopra l'immagine
-                    title = file.split(".")[0].replace("_", " ").title()
-                    st.markdown(f"<p style='font-size:12px; text-align:center'>{title}</p>", unsafe_allow_html=True)
-
-                    if file.lower().endswith((".jpg", ".jpeg", ".png")):
-                        st.image(file_path)
-
-"""
 st.write("---")
 
 # -----------------------------
@@ -348,6 +309,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
