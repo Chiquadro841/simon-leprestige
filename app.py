@@ -278,7 +278,7 @@ def avanti():
     st.session_state.index = (st.session_state.index + 1) % len(immagini_path)
 
 
-c1, c2, c3 = st.columns([1,0.7,1])
+c1, c2, c3 = st.columns([1,2,1])
 
 with c2:
     # Mostra immagine centrata usando st.image
@@ -341,6 +341,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
