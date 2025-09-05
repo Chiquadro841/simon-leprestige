@@ -277,7 +277,9 @@ if "index" not in st.session_state:
 def avanti():
     st.session_state.index = (st.session_state.index + 1) % len(immagini_path)
 
-
+st.markdown(
+        f"{text3}"
+    )
 c1, c2, c3 = st.columns([1,1,1])
 
 # Prendi solo il nome file senza percorso e senza estensione
@@ -346,6 +348,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
