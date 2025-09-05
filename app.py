@@ -239,7 +239,7 @@ import streamlit as st
 
 
 # Lista media
-media = [
+immagini = [
     "Josè_Bobadilla.jpg", "Yamil_Raidan.jpg", "Silvan.jpg",
     "Patrick_Wave.jpg", "Orietta_Berti.jpg",
     "Elio_e_le_storie_tese.jpg", "Hollywood.jpg", "Dynamo.jpg",
@@ -252,7 +252,48 @@ media_dir = Path.cwd() / "images"
 st.markdown(
         f"{text3}"
     )
-    # Ciclo per mostrare immagini in gruppi di 3
+
+# Stato
+if "index" not in st.session_state:
+    st.session_state.index = 0
+
+# Altezza immagine
+img_height = 250
+
+# Layout a 3 colonne
+col1, col2, col3 = st.columns([1,6,1])
+
+
+def avanti():
+    st.session_state.index = (st.session_state.index + 1) % len(immagini)
+
+def indietro():
+    st.session_state.index = (st.session_state.index - 1) % len(immagini)
+
+
+
+with col1:
+    st.markdown("<p style='color:transparent;'>riempimento fittizio per scendere i pulsanti</p><br>", unsafe_allow_html=True)
+    st.button("◀", on_click=indietro)
+    
+with col2:
+    st.image(
+        immagini[st.session_state.index],
+        width=400,
+        caption=f"Foto {st.session_state.index+1} di {len(immagini)}"
+    )
+with col3:
+    st.markdown("<p style='color:transparent;'>riempimento fittizio per scendere i pulsanti</p><br>", unsafe_allow_html=True)
+    st.button("▶", on_click=avanti)
+
+
+
+
+
+
+
+
+"""    # Ciclo per mostrare immagini in gruppi di 3
 for i in range(0, len(media), 3):
         cols = st.columns(3)
         for j, col in enumerate(cols):
@@ -267,7 +308,7 @@ for i in range(0, len(media), 3):
                     if file.lower().endswith((".jpg", ".jpeg", ".png")):
                         st.image(file_path)
 
-
+"""
 
 st.write("---")
 
@@ -282,6 +323,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
