@@ -280,10 +280,12 @@ def avanti():
 def indietro():
     st.session_state.index = (st.session_state.index - 1) % len(immagini_path)
 
-# Mostra immagine
+# Mostra immagine centrata
 img = load_and_crop(immagini_path[st.session_state.index])
-st.image(img, width=target_width,
-         caption=f"Foto {st.session_state.index+1} di {len(immagini_path)}")
+st.markdown(
+    f"<div style='text-align:center'><img src='{immagini_path[st.session_state.index]}' width='{target_width}'></div>",
+    unsafe_allow_html=True
+)
 
 # Pulsanti centrati sotto
 c1, c2, c3 = st.columns([1,1,1])
@@ -348,6 +350,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
