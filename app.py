@@ -238,7 +238,7 @@ from pathlib import Path
 import streamlit as st
 
 
-immagini = [
+immagini_url = [
      "images/Josè_Bobadilla.jpg", "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
     "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
     "images/Elio_e_le_storie_tese.jpg", "images/Hollywood.jpg", "images/Dynamo.jpg",
@@ -246,38 +246,47 @@ immagini = [
 ]
 
 
+# Dimensione target
+target_width = 400
+target_height = 250
+
+def load_and_crop(url):
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    # Ridimensiona mantenendo proporzioni
+    img.thumbnail((max(img.size), max(img.size)))
+    # Ritaglio centrale
+    width, height = img.size
+    left = (width - target_width)/2
+    top = (height - target_height)/2
+    right = (width + target_width)/2
+    bottom = (height + target_height)/2
+    img = img.crop((left, top, right, bottom))
+    return img
+
 # Stato
 if "index" not in st.session_state:
     st.session_state.index = 0
 
-# Funzioni per cambiare immagine
 def avanti():
-    st.session_state.index = (st.session_state.index + 1) % len(immagini)
+    st.session_state.index = (st.session_state.index + 1) % len(immagini_url)
 
 def indietro():
-    st.session_state.index = (st.session_state.index - 1) % len(immagini)
+    st.session_state.index = (st.session_state.index - 1) % len(immagini_url)
 
-# Pulsante sopra (opzionale)
-# st.button("◀ Indietro", on_click=indietro)
+# Mostra immagine
+img = load_and_crop(immagini_url[st.session_state.index])
+st.image(img, width=target_width,
+         caption=f"Foto {st.session_state.index+1} di {len(immagini_url)}")
 
-# Immagine al centro
-st.image(immagini[st.session_state.index], width=400,
-         caption=f"Foto {st.session_state.index+1} di {len(immagini)}")
-
-
-
-# Pulsanti centrati sotto l'immagine
+# Pulsanti centrati
 c1, c2, c3 = st.columns([1,1,1])
-with c1:
-    pass
 with c2:
     col_left, col_right = st.columns(2)
     with col_left:
         st.button("◀", on_click=indietro)
     with col_right:
         st.button("▶", on_click=avanti)
-with c3:
-    pass
 
 
 
@@ -333,6 +342,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
