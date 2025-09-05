@@ -293,7 +293,7 @@ with c2:
     st.image(img, width=400, caption=f"{nome_foto}    {st.session_state.index+1} di {len(immagini_path)}")
 
     # Pulsante centrato visivamente
-    st.markdown("<div style='text-align:center'>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align:center; margin-left: 100px;'>", unsafe_allow_html=True)
     st.button("▶", on_click=avanti)
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -313,6 +313,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
