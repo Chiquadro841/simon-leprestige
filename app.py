@@ -258,7 +258,7 @@ if "index" not in st.session_state:
     st.session_state.index = 0
 
 # Altezza immagine
-img_height = 250
+img_height = 400
 
 # Layout a 3 colonne
 col1, col2, col3 = st.columns([1,6,1])
@@ -323,6 +323,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
