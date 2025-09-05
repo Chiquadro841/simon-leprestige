@@ -236,6 +236,9 @@ st.write("---")
 
 from pathlib import Path
 import streamlit as st
+from PIL import Image
+import requests
+from io import BytesIO
 
 
 immagini_url = [
@@ -342,6 +345,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
