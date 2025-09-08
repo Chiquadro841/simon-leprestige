@@ -270,12 +270,14 @@ def img_to_base64(path):
 
 base64_imgs = [(f"data:image/jpeg;base64,{img_to_base64(p)}", titolo) for p, titolo in immagini_path]
 
-# Generazione slide con immagine + titolo
+# Generazione slide (immagine + titolo in overlay in alto)
 slides = "".join(
     f"""
-    <div class="swiper-slide" style="display:flex; flex-direction:column; align-items:center;">
+    <div class="swiper-slide" style="position:relative; display:flex; align-items:center; justify-content:center;">
         <img src="{src}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
-        <div style="margin-top:8px; font-size:16px; font-weight:bold; color:#DCC163; text-align:center;">
+        <div style="position:absolute; top:10px; left:50%; transform:translateX(-50%);
+                    background-color:rgba(0,0,0,0.6); padding:4px 10px; border-radius:8px;
+                    font-size:16px; font-weight:bold; color:#DCC163; text-align:center;">
             {titolo}
         </div>
     </div>
@@ -417,6 +419,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
