@@ -279,24 +279,14 @@ carousel_html = f"""
 <style>
   .swiper {{
     width: 100%;
-    max-width: 480px;
+    max-width: 480px;   /* limite massimo */
     height: 500px;
   }}
-
-  /* Colore bottoni */
   .swiper-button-next,
   .swiper-button-prev {{
-    color: #DCC163;
+    color: white;  /* colore dei bottoni */
     top: 50%;
     transform: translateY(-50%);
-  }}
-
-  /* Colore pallini della paginazione */
-  .swiper-pagination-bullet {{
-    background: rgba(220, 193, 99, 0.4); /* colore più tenue per i non attivi */
-  }}
-  .swiper-pagination-bullet-active {{
-    background: #DCC163; /* colore pieno per quello attivo */
   }}
 </style>
 
@@ -405,6 +395,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
