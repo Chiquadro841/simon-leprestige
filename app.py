@@ -296,7 +296,7 @@ carousel_html = f"""
   }}
 
   .swiper-pagination {
-    margin-bottom: -20px;  /* sposta più in basso */
+    bottom: -20px;
 }
 
   /* Colore bottoni */
@@ -421,6 +421,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
