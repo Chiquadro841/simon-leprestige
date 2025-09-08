@@ -295,11 +295,6 @@ carousel_html = f"""
     height: 540px; 
   }}
 
-  /* Pallini spostati più in basso */
-.swiper-pagination {{
-    bottom: -90px;
-}}
-
   /* Colore bottoni */
   .swiper-button-next,
   .swiper-button-prev {{
@@ -311,6 +306,7 @@ carousel_html = f"""
   /* Colore pallini */
   .swiper-pagination-bullet {{
     background: rgba(220, 193, 99, 0.4);
+    bottom: -50'x;
   }}
   .swiper-pagination-bullet-active {{
     background: #DCC163;
@@ -422,6 +418,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
