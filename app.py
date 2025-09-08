@@ -240,7 +240,9 @@ from PIL import Image
 import requests
 from io import BytesIO
 
-st.title("Carosello immagini locali con swipe e bottoni")
+st.markdown(
+        f"{text3}\n"
+    )
 
 # Lista immagini locali
 immagini = [
@@ -356,6 +358,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
