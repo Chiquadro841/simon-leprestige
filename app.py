@@ -295,9 +295,10 @@ carousel_html = f"""
     height: 540px; 
   }}
 
-  .swiper-pagination {
+  /* Pallini spostati più in basso */
+.swiper-pagination {{
     bottom: -20px;
-}
+}}
 
   /* Colore bottoni */
   .swiper-button-next,
@@ -421,6 +422,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
