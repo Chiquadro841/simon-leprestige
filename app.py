@@ -241,6 +241,44 @@ import requests
 from io import BytesIO
 
 
+import streamlit as st
+
+st.title("Carosello di immagini con swipe su mobile")
+
+carousel_html = """
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<div class="swiper mySwiper" style="width:100%; height:300px;">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://picsum.photos/id/1015/600/300" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://picsum.photos/id/1025/600/300" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://picsum.photos/id/1035/600/300" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+</script>
+"""
+
+st.components.v1.html(carousel_html, height=320, scrolling=False)
+
+"""
 # Lista immagini locali
 immagini = [
     "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
@@ -293,7 +331,7 @@ with c2:
     st.image(img, width=380, caption=f"{nome_foto}    {st.session_state.index+1} di {len(immagini_path)}")
 
     st.button("▶", on_click=avanti)
-
+"""
 
 
 
@@ -310,6 +348,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
