@@ -280,7 +280,21 @@ carousel_html = f"""
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 
-<div class="swiper mySwiper" style="width:{target_width}px; height:{target_height}px;">
+<style>
+  .swiper {{
+    width: 100%;
+    max-width: 480px;   /* limite massimo */
+    height: 500px;
+  }}
+  .swiper-button-next,
+  .swiper-button-prev {{
+    color: white;  /* colore dei bottoni */
+    top: 50%;
+    transform: translateY(-50%);
+  }}
+</style>
+
+<div class="swiper mySwiper">
   <div class="swiper-wrapper">
     {slides}
   </div>
@@ -385,6 +399,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
