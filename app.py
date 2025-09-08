@@ -275,7 +275,7 @@ slides = "".join(
     f"""
     <div class="swiper-slide" style="display:flex; flex-direction:column; align-items:center;">
         <img src="{src}" style="width:100%; height:{target_height}px; object-fit:cover; border-radius:12px;" />
-        <div style="margin-top:8px; font-size:16px; font-weight:normal; color:#DCC163; text-align:center;">
+        <div style="margin-top:8px; margin-bottom:8px; font-size:24px; font-weight:normal; color:#DCC163; text-align:center;">
             {titolo}
         </div>
     </div>
@@ -417,6 +417,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
