@@ -292,7 +292,7 @@ carousel_html = f"""
   .swiper {{
     width: 100%;
     max-width: 480px;
-    height: 550px; 
+    height: 575px; 
   }}
 
   /* Colore bottoni */
@@ -417,6 +417,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
