@@ -303,7 +303,7 @@ carousel_html = f"""
     transform: translateY(-50%);
   }}
   .swiper-pagination {{
-    bottom: 20px;
+    bottom: -20px;
     }}
     
   /* Colore pallini */
@@ -420,6 +420,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
