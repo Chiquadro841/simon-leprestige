@@ -240,43 +240,80 @@ from PIL import Image
 import requests
 from io import BytesIO
 
+st.title("Carosello immagini locali con swipe e bottoni")
 
-import streamlit as st
+# Lista immagini locali
+immagini = [
+    "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
+    "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
+    "images/Josè_Bobadilla.jpg", "images/Hollywood.jpg",
+    "images/Dynamo.jpg", "images/Jeff_Onorato.jpg",
+    "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.JPG",
+    "images/Elio_e_le_storie_tese.jpg"
+]
 
-st.title("Carosello di immagini con swipe su mobile")
+immagini_path = [Path.cwd()/img for img in immagini]
 
-carousel_html = """
+# Dimensione target
+target_width = 480
+target_height = 500
+
+# Conversione immagini in base64
+def img_to_base64(path):
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+base64_imgs = [f"data:image/jpeg;base64,{img_to_base64(p)}" for p in immagini_path]
+
+# Generazione HTML carosello
+slides = "".join(
+    f"""
+    <div class="swiper-slide">
+        <img src="{src}" style="width:{target_width}px; height:{target_height}px; object-fit:cover; border-radius:12px;" />
+    </div>
+    """ for src in base64_imgs
+)
+
+carousel_html = f"""
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 
-<div class="swiper mySwiper" style="width:100%; height:300px;">
+<div class="swiper mySwiper" style="width:{target_width}px; height:{target_height}px;">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="https://picsum.photos/id/1015/600/300" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
-    </div>
-    <div class="swiper-slide">
-      <img src="https://picsum.photos/id/1025/600/300" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
-    </div>
-    <div class="swiper-slide">
-      <img src="https://picsum.photos/id/1035/600/300" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
-    </div>
+    {slides}
   </div>
+
+  <!-- Paginazione -->
   <div class="swiper-pagination"></div>
+
+  <!-- Bottoni next/prev -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    pagination: {
+  var swiper = new Swiper(".mySwiper", {{
+    loop: true,
+    pagination: {{
       el: ".swiper-pagination",
-    },
-  });
+      clickable: true,
+    }},
+    navigation: {{
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    }},
+  }});
 </script>
 """
 
-st.components.v1.html(carousel_html, height=320, scrolling=False)
+st.components.v1.html(carousel_html, height=target_height+80, scrolling=False)
+
+
+
+
 
 """
 # Lista immagini locali
@@ -348,6 +385,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
