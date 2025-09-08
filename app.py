@@ -257,7 +257,7 @@ immagini = [
     ("images/Elio_e_le_storie_tese.jpg", "Elio e le Storie Tese")
 ]
 
-immagini_path = [Path.cwd()/img for img in immagini]
+immagini_path = [(Path.cwd()/img, titolo) for img, titolo in immagini]
 
 # Dimensione target
 target_width = 480
@@ -417,6 +417,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
