@@ -244,30 +244,42 @@ st.title("Carosello immagini locali con swipe e bottoni")
 
 # Lista immagini locali
 immagini = [
-    "images/Yamil_Raidan.jpg", "images/Silvan.jpg",
-    "images/Patrick_Wave.jpg", "images/Orietta_Berti.jpg",
-    "images/Josè_Bobadilla.jpg", "images/Hollywood.jpg",
-    "images/Dynamo.jpg", "images/Jeff_Onorato.jpg",
-    "images/Scamarcio_e_Porcaroli.jpg", "images/Rafael_Ayala.JPG",
-    "images/Elio_e_le_storie_tese.jpg"
+    ("images/Yamil_Raidan.jpg", "Yamil Raidan"),
+    ("images/Silvan.jpg", "Silvan"),
+    ("images/Patrick_Wave.jpg", "Patrick Wave"),
+    ("images/Orietta_Berti.jpg", "Orietta Berti"),
+    ("images/Josè_Bobadilla.jpg", "Josè Bobadilla"),
+    ("images/Hollywood.jpg", "Hollywood"),
+    ("images/Dynamo.jpg", "Dynamo"),
+    ("images/Jeff_Onorato.jpg", "Jeff Onorato"),
+    ("images/Scamarcio_e_Porcaroli.jpg", "Scamarcio & Porcaroli"),
+    ("images/Rafael_Ayala.JPG", "Rafael Ayala"),
+    ("images/Elio_e_le_storie_tese.jpg", "Elio e le Storie Tese")
 ]
 
 immagini_path = [Path.cwd()/img for img in immagini]
+
+# Dimensione target
+target_width = 480
+target_height = 500
 
 # Conversione immagini in base64
 def img_to_base64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-base64_imgs = [f"data:image/jpeg;base64,{img_to_base64(p)}" for p in immagini_path]
+base64_imgs = [(f"data:image/jpeg;base64,{img_to_base64(p)}", titolo) for p, titolo in immagini_path]
 
-# Generazione slide
+# Generazione slide con immagine + titolo
 slides = "".join(
     f"""
-    <div class="swiper-slide">
+    <div class="swiper-slide" style="display:flex; flex-direction:column; align-items:center;">
         <img src="{src}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
+        <div style="margin-top:8px; font-size:16px; font-weight:bold; color:#DCC163; text-align:center;">
+            {titolo}
+        </div>
     </div>
-    """ for src in base64_imgs
+    """ for src, titolo in base64_imgs
 )
 
 carousel_html = f"""
@@ -279,14 +291,24 @@ carousel_html = f"""
 <style>
   .swiper {{
     width: 100%;
-    max-width: 480px;   /* limite massimo */
-    height: 500px;
+    max-width: 480px;
+    height: 540px; /* un po' più alto per lasciare spazio al titolo */
   }}
+
+  /* Colore bottoni */
   .swiper-button-next,
   .swiper-button-prev {{
-    color: white;  /* colore dei bottoni */
-    top: 50%;
+    color: #DCC163;
+    top: 45%;
     transform: translateY(-50%);
+  }}
+
+  /* Colore pallini */
+  .swiper-pagination-bullet {{
+    background: rgba(220, 193, 99, 0.4);
+  }}
+  .swiper-pagination-bullet-active {{
+    background: #DCC163;
   }}
 </style>
 
@@ -395,6 +417,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
