@@ -100,29 +100,25 @@ with col2:
     )
 
 with col3:
-    st.markdown("""
-        <div style='text-align: center;'>
-            <p><b>Language</b></p>
-        </div>
-    """, unsafe_allow_html=True)
-
-    # Contenitore per centrare il box
     st.markdown(
         """
-        <div style='display: flex; justify-content: center;'>
-            <div style='width: 150px;'>
-                """,
+        <div style="display: flex; flex-direction: column; 
+                    justify-content: center; 
+                    align-items: center; 
+                    height: 100%;">  <!-- occupa tutta l’altezza della colonna -->
+            <p style="margin-bottom: 8px; font-weight: bold;">Language</p>
+        """,
         unsafe_allow_html=True
     )
 
     lang = st.selectbox(
-        "",  # niente etichetta qui
+        "",  # senza label qui
         options=["Italiano", "English", "Français"],
         index=0,
         key="lang_select"
     )
 
-    st.markdown("</div></div>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
     
 
     # --- Testi multilingua ---
@@ -358,6 +354,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
