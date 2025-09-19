@@ -100,30 +100,16 @@ with col2:
     )
 
 with col3:
-    
-    
+    # --- Titolo centrato ---
+    st.markdown("<div style='text-align: center;'>Language</div>", unsafe_allow_html=True)
 
-     # --- Selettore lingua ---
-    st.markdown("""
-        <style>
-            div[data-baseweb="select"] {
-                display: inline-block;     /* inline per centrarlo */
-                max-width: 120px;          /* larghezza ridotta */
-            }
-            .stSelectbox {
-                text-align: center;        /* centra l'etichetta */
-            }
-        </style>
-    """, unsafe_allow_html=True)
-   
-
+    # --- Selettore lingua ---
     lang = st.selectbox(
-        "Language",
+        "",
         options=["Italiano", "English", "Français"],
         index=0,
         key="lang_select"
     )
-    
     
 
     # --- Testi multilingua ---
@@ -359,6 +345,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
