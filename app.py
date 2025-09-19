@@ -120,8 +120,7 @@ with col3:
         index=0,
         key="lang_select"
     )
-    
-    sono in streamlit come faccio a centrare il testo language nella colonna
+
 
     # --- Testi multilingua ---
 if lang == "Italiano":
@@ -356,6 +355,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
