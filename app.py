@@ -114,7 +114,7 @@ with col3:
                 margin-left: auto;
                 margin-right: auto;
                 max-width: 120px;
-                margin-top: -25px;      /* <- qui la sposti verso l'alto */
+                margin-top: -30px;      /* <- qui la sposti verso l'alto */
             }
         </style>
     """, unsafe_allow_html=True)
@@ -361,6 +361,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
