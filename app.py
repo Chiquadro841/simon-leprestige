@@ -248,16 +248,16 @@ st.markdown(
 
 # Lista immagini locali
 immagini = [
-    ("images/Yamil_Raidan.jpg", "Yamil Raidan"),
-    ("images/Silvan.jpg", "Silvan"),
-    ("images/Patrick_Wave.jpg", "Patrick Wave"),
+    ("images/Scamarcio_e_Porcaroli.jpg", "Benedetta Porcaroli"),
+    ("images/Scamarcio.jpg" ,"Scamarcio"),
     ("images/Orietta_Berti.jpg", "Orietta Berti"),
     ("images/Josè_Bobadilla.jpg", "Josè Bobadilla"),
     ("images/Hollywood.jpg", "Hollywood"),
     ("images/Dynamo.jpg", "Dynamo"),
+    ("images/Yamil_Raidan.jpg", "Yamil Raidan"),
+    ("images/Silvan.jpg", "Silvan"),
+    ("images/Patrick_Wave.jpg", "Patrick Wave"),
     ("images/Jeff_Onorato.jpg", "Jeff Onorato"),
-    ("images/Scamarcio_e_Porcaroli.jpg", "Scamarcio & Porcaroli"),
-    ("images/Scamarcio.jpg" ,"Scamarcio"),
     ("images/Rafael_Ayala.JPG", "Rafael Ayala"),
     ("images/Elio_e_le_storie_tese.jpg", "Elio e le Storie Tese")
 ]
@@ -361,6 +361,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
