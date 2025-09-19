@@ -102,7 +102,7 @@ with col2:
 with col3:
     # testo centrato sopra la selectbox
     st.markdown(
-        "<div style='text-align:center; font-weight:bold; margin-bottom:5px;'>Language</div>", 
+        "<div style='text-align:center; font-weight:bold; margin-bottom:15px;'>Language</div>", 
         unsafe_allow_html=True
     )
 
@@ -361,6 +361,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
