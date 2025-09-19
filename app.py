@@ -100,26 +100,27 @@ with col2:
     )
 
 with col3:
+    # testo centrato sopra la selectbox
+    st.markdown(
+        "<div style='text-align:center; font-weight:bold; margin-bottom:5px;'>Language</div>", 
+        unsafe_allow_html=True
+    )
 
- # testo sopra la selectbox
-st.markdown("<div style='text-align:center; margin-bottom:5px;'>Language</div>", unsafe_allow_html=True)
-
-     # --- Selettore lingua ---
+    # CSS per centrare la selectbox e limitarne la larghezza
     st.markdown("""
         <style>
             div[data-baseweb="select"] {
-                display: inline-block;     /* inline per centrarlo */
-                max-width: 120px;          /* larghezza ridotta */
-            }
-            .stSelectbox {
-                text-align: center;        /* centra l'etichetta */
+                display: block;         /* block per centrarlo con margin auto */
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 120px;
             }
         </style>
     """, unsafe_allow_html=True)
-   
 
+    # selectbox senza label
     lang = st.selectbox(
-        "",
+        "",  # vuoto perché abbiamo già il nostro testo
         options=["Italiano", "English", "Français"],
         index=0,
         key="lang_select"
@@ -359,6 +360,7 @@ st.markdown(f"""
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simone98rossi" target="_blank">@simone98rossi</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
